@@ -1,0 +1,11 @@
+# AIDesignSutra — robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aidesignsutra.netlify.app/sitemap.xml
+
+# Block no pages — full site is public
+Disallow:
