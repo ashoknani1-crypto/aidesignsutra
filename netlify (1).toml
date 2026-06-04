@@ -1,0 +1,49 @@
+# AIDesignSutra — netlify.toml
+# Security headers — AdSense compatible
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Prevent clickjacking
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Stop MIME sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # XSS protection
+    X-XSS-Protection = "1; mode=block"
+
+    # Referrer policy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Force HTTPS for 1 year
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Disable unnecessary browser features
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # NOTE: unsafe-inline is required by Google AdSense inline scripts.
+    # This is a known limitation when using AdSense on static sites.
+    # All other sources are strictly whitelisted.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://adservice.google.com https://googleads.g.doubleclick.net https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;"
+
+    # Extra: hide server info
+    X-Powered-By = ""
+    Server = ""
+
+# Cache HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
