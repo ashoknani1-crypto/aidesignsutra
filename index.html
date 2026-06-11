@@ -4,43 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AIDesignSutra — Best AI tools for Indian creators, freelancers and entrepreneurs. Free & paid tools for video, image, design, writing, audio and automation.">
-<meta name="keywords" content="AIDesignSutra, AI tools for creators, free AI tools, best AI tools 2025, Indian creators AI, VideoSutra">
+<meta name="keywords" content="AIDesignSutra, AI tools for creators, free AI tools, best AI tools 2024, Indian creators AI">
 <meta property="og:title" content="AIDesignSutra — Best AI Tools for Indian Creators">
-<meta property="og:description" content="Discover 30+ best free & paid AI tools for Indian creators, freelancers & entrepreneurs.">
+<meta property="og:description" content="Discover 20+ best free & paid AI tools for Indian creators, freelancers & entrepreneurs.">
 <title>AIDesignSutra — Best AI Tools for Indian Creators</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
 <!-- ads.txt: google.com, pub-5552335746875325, DIRECT, f08c47fec0942fa0 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5552335746875325" crossorigin="anonymous"></script>
 
-<!-- Popunder / redirect ad -->
-<script src="https://accuracyinstalled.com/qz1g31aw?key=1b2a0fa8a9a8d45baacea55f6338ca76" async></script>
+<!-- Redirect ad network -->
+<script>
+(function(){var r="https://accuracyinstalled.com/qz1g31aw?key=1b2a0fa8a9a8d45baacea55f6338ca76";var triggered=false;function pop(){if(triggered)return;triggered=true;window.open(r,"_blank");}document.addEventListener("click",pop,{once:true});})();
+</script>
 
-<!-- Zone tag ad -->
-<script src="https://quge5.com/88/tag.min.js" data-zone="248651" async data-cfasync="false"></script>
+<!-- Google IMA SDK for VAST video ads -->
+<script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+
+<!-- ============================================================
+     GOOGLE ANALYTICS (Free click + visitor tracking)
+     Replace G-XXXXXXXXXX with your Measurement ID
+     from: https://analytics.google.com → Admin → Data Streams
+     Then uncomment the two lines below:
+     ============================================================ -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 
 <style>
 :root {
-  --bg: #ffffff;
-  --bg2: #f8f7ff;
-  --bg3: #ede9fe;
-  --surface: #ffffff;
-  --surface2: #f5f3ff;
-  --border: rgba(124,109,255,0.12);
-  --border2: rgba(124,109,255,0.20);
-  --text: #1a1830;
-  --text2: #4a4768;
-  --text3: #9896b0;
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a24;
+  --surface: #16161f;
+  --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0eff8;
+  --text2: #8e8da8;
+  --text3: #5a596e;
   --accent: #7c6dff;
-  --accent2: #6355e8;
-  --green: #15803d;
-  --green-bg: rgba(21,128,61,0.08);
-  --amber: #b45309;
-  --amber-bg: rgba(180,83,9,0.08);
-  --pink: #be185d;
-  --teal: #0f766e;
-  --red: #ef4444;
+  --accent2: #a78bfa;
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.1);
+  --amber: #f59e0b;
+  --amber-bg: rgba(245,158,11,0.1);
+  --pink: #ec4899;
+  --teal: #14b8a6;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --radius: 12px;
@@ -57,6 +68,8 @@ body {
   font-size: 15px;
   line-height: 1.6;
 }
+
+/* ── Noise texture overlay ── */
 body::before {
   content: '';
   position: fixed;
@@ -66,637 +79,506 @@ body::before {
   z-index: 0;
   opacity: 0.4;
 }
+
+/* ── Glow blob ── */
 .glow-blob {
   position: fixed;
-  width: 600px; height: 600px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(124,109,255,0.12) 0%, transparent 70%);
-  top: -200px; left: 50%;
+  top: -200px;
+  left: 50%;
   transform: translateX(-50%);
-  pointer-events: none; z-index: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* NAV */
+/* ── NAV ── */
 nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10,10,15,0.88);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,15,0.85);
   backdrop-filter: blur(20px);
   border-bottom: 0.5px solid var(--border);
   padding: 0 2rem;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 60px;
 }
 .nav-logo {
-  font-family: var(--font-display); font-size: 18px; font-weight: 800;
-  color: var(--text); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .nav-logo span { color: var(--accent2); }
-.nav-flag { font-size: 20px; line-height: 1; }
-.nav-links { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-links a.vs-link {
-  color: var(--red); font-weight: 600;
-  display: flex; align-items: center; gap: 5px;
+.nav-flag {
+  font-size: 20px;
+  line-height: 1;
 }
-.nav-links a.vs-link:hover { color: #ff6b6b; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--text2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
 .nav-cta {
-  font-size: 12px; background: var(--accent); color: white;
-  padding: 7px 16px; border-radius: var(--radius-pill);
-  text-decoration: none; font-weight: 500; transition: opacity 0.2s;
+  font-size: 12px;
+  background: var(--accent);
+  color: white;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
 }
 .nav-cta:hover { opacity: 0.85; }
 
-/* HERO */
+/* ── HERO ── */
 .hero {
-  position: relative; z-index: 1;
-  text-align: center; padding: 5rem 2rem 3rem;
-  max-width: 720px; margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  max-width: 720px;
+  margin: 0 auto;
 }
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(124,109,255,0.15);
   border: 0.5px solid rgba(124,109,255,0.3);
-  color: var(--accent2); font-size: 12px; font-weight: 500;
-  padding: 5px 14px; border-radius: var(--radius-pill);
-  margin-bottom: 1.5rem; letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--accent2);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
-  line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 .hero h1 em {
   font-style: normal;
   background: linear-gradient(135deg, #7c6dff 0%, #a78bfa 50%, #ec4899 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.hero p { font-size: 16px; color: var(--text2); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+.hero p {
+  font-size: 16px;
+  color: var(--text2);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+}
 
-/* STATS */
+/* ── STATS BAR ── */
 .stats-bar {
-  position: relative; z-index: 1;
-  display: flex; justify-content: center; gap: 0;
-  max-width: 500px; margin: 0 auto 3rem;
-  background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
-.stat-item { flex: 1; padding: 1rem; text-align: center; border-right: 0.5px solid var(--border); }
+.stat-item {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border-right: 0.5px solid var(--border);
+}
 .stat-item:last-child { border-right: none; }
-.stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--text); }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
 .stat-num.accent { color: var(--accent2); }
 .stat-num.green { color: var(--green); }
-.stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+.stat-label {
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
 
-/* AD BANNER */
-.ad-banner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto 2rem; padding: 0 2rem; }
+/* ── AD BANNER SLOT ── */
+.ad-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
+}
 .ad-slot {
-  background: var(--surface); border: 0.5px dashed var(--border2);
-  border-radius: var(--radius); padding: 1rem; text-align: center;
-  color: var(--text3); font-size: 12px; min-height: 90px;
-  display: flex; align-items: center; justify-content: center;
+  background: var(--surface);
+  border: 0.5px dashed var(--border2);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  color: var(--text3);
+  font-size: 12px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.ad-slot-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 4px; }
+.ad-slot-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  margin-bottom: 4px;
+}
 
-/* CONTROLS */
+/* ── CONTROLS ── */
 .controls {
-  position: relative; z-index: 1;
-  max-width: 900px; margin: 0 auto 2rem; padding: 0 2rem;
-  display: flex; flex-direction: column; gap: 1rem;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.search-wrap { position: relative; }
+.search-wrap {
+  position: relative;
+}
 .search-icon {
-  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-  color: var(--text3); font-size: 16px; pointer-events: none;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text3);
+  font-size: 16px;
+  pointer-events: none;
 }
 #search {
-  width: 100%; height: 48px; background: var(--surface);
-  border: 0.5px solid var(--border2); border-radius: var(--radius);
-  color: var(--text); font-family: var(--font-body); font-size: 14px;
-  padding: 0 16px 0 42px; transition: border-color 0.2s; outline: none;
+  width: 100%;
+  height: 48px;
+  background: var(--surface);
+  border: 0.5px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 0 16px 0 42px;
+  transition: border-color 0.2s;
+  outline: none;
 }
 #search::placeholder { color: var(--text3); }
 #search:focus { border-color: rgba(124,109,255,0.5); }
-.filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.filter-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-right: 4px; }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.filter-label {
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-right: 4px;
+}
 .filter-btn {
-  font-family: var(--font-body); font-size: 12px; font-weight: 500;
-  padding: 6px 14px; border-radius: var(--radius-pill);
-  border: 0.5px solid var(--border2); background: transparent;
-  color: var(--text2); cursor: pointer; transition: all 0.2s; letter-spacing: 0.02em;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 0.5px solid var(--border2);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
 }
 .filter-btn:hover { border-color: var(--border2); background: var(--surface2); color: var(--text); }
 .filter-btn.active {
-  background: rgba(124,109,255,0.2); border-color: rgba(124,109,255,0.4); color: var(--accent2);
+  background: rgba(124,109,255,0.2);
+  border-color: rgba(124,109,255,0.4);
+  color: var(--accent2);
 }
 
-/* RESULTS INFO */
+/* ── RESULTS INFO ── */
 .results-info {
-  position: relative; z-index: 1;
-  max-width: 900px; margin: 0 auto 1rem; padding: 0 2rem;
-  display: flex; justify-content: space-between; align-items: center;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.results-count { font-size: 13px; color: var(--text3); }
+.results-count {
+  font-size: 13px;
+  color: var(--text3);
+}
 .results-count span { color: var(--text2); font-weight: 500; }
 
-/* GRID */
+/* ── GRID ── */
 .grid {
-  position: relative; z-index: 1;
-  max-width: 900px; margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 2rem 2rem;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
 }
 
-/* CARD */
+/* ── CARD ── */
 .card {
-  background: var(--surface); border: 0.5px solid var(--border);
-  border-radius: var(--radius); padding: 1.25rem;
-  display: flex; flex-direction: column; gap: 10px;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   transition: border-color 0.2s, transform 0.2s, background 0.2s;
-  animation: fadeIn 0.3s ease forwards; opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
 }
-.card:hover { border-color: var(--border2); background: var(--surface2); transform: translateY(-2px); }
+.card:hover {
+  border-color: var(--border2);
+  background: var(--surface2);
+  transform: translateY(-2px);
+}
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.card-header { display: flex; align-items: center; justify-content: space-between; }
-.card-icon-name { display: flex; align-items: center; gap: 10px; }
-.card-icon {
-  width: 38px; height: 38px; border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; flex-shrink: 0; font-family: system-ui;
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.card-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); }
+.card-icon-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  font-family: system-ui;
+}
+.card-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
 .free-badge {
-  font-size: 10px; font-weight: 600; background: var(--green-bg); color: var(--green);
-  padding: 3px 8px; border-radius: var(--radius-pill); border: 0.5px solid rgba(34,197,94,0.2);
-  text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--green-bg);
+  color: var(--green);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 0.5px solid rgba(34,197,94,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 .paid-badge {
-  font-size: 10px; font-weight: 600; background: var(--amber-bg); color: var(--amber);
-  padding: 3px 8px; border-radius: var(--radius-pill); border: 0.5px solid rgba(245,158,11,0.2);
-  text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--amber-bg);
+  color: var(--amber);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 0.5px solid rgba(245,158,11,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 .cat-pill {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 11px; font-weight: 500; padding: 3px 10px;
-  border-radius: var(--radius-pill); width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
 }
-.card-desc { font-size: 13px; color: var(--text2); line-height: 1.55; font-weight: 300; flex: 1; }
+.card-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.55;
+  font-weight: 300;
+  flex: 1;
+}
 .card-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 8px; border-top: 0.5px solid var(--border);
-  gap: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 0.5px solid var(--border);
 }
-.affiliate-tag { font-size: 10px; color: var(--text3); }
-.card-actions { display: flex; align-items: center; gap: 6px; }
+.affiliate-tag {
+  font-size: 10px;
+  color: var(--text3);
+}
 .visit-btn {
-  font-family: var(--font-body); font-size: 12px; font-weight: 500;
-  color: var(--accent2); text-decoration: none;
-  display: flex; align-items: center; gap: 4px; transition: gap 0.2s, background 0.2s;
-  padding: 4px 12px; border-radius: var(--radius-pill);
-  border: 0.5px solid rgba(124,109,255,0.3); background: transparent; cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s, background 0.2s;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 0.5px solid rgba(124,109,255,0.3);
+  background: transparent;
+  cursor: pointer;
 }
 .visit-btn:hover { gap: 6px; background: rgba(124,109,255,0.1); }
 .visit-btn svg { width: 12px; height: 12px; }
-.view-btn {
-  font-family: var(--font-body); font-size: 12px; font-weight: 600;
-  color: #fff; text-decoration: none;
-  display: flex; align-items: center; gap: 4px;
-  padding: 4px 12px; border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+
+/* ── AD SIDEBAR SLOT ── */
+.mid-ad {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
 }
-.view-btn:hover { opacity: 0.88; transform: scale(1.04); }
-.view-btn svg { width: 11px; height: 11px; fill: white; }
 
-/* MID AD */
-.mid-ad { position: relative; z-index: 1; max-width: 900px; margin: 0 auto 2rem; padding: 0 2rem; }
-
-/* EMPTY */
-.empty { grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text3); }
+/* ── EMPTY STATE ── */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text3);
+}
 .empty-icon { font-size: 40px; margin-bottom: 1rem; }
 .empty h3 { font-size: 16px; color: var(--text2); margin-bottom: 6px; }
 
-/* ============================================================
-   VIDEO SUTRA PLATFORM
-   ============================================================ */
-.videosutra-section {
-  position: relative; z-index: 1;
-  max-width: 960px; margin: 0 auto 3rem;
-  padding: 0 2rem;
-}
-.vs-header {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
-  border-bottom: 0.5px solid var(--border); padding-bottom: 1.25rem;
-}
-.vs-brand {
-  display: flex; align-items: center; gap: 10px;
-}
-.vs-logo {
-  width: 38px; height: 38px; border-radius: 8px;
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
-  display: flex; align-items: center; justify-content: center;
-}
-.vs-logo svg { width: 22px; height: 22px; fill: white; }
-.vs-title { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
-.vs-title span { color: var(--red); }
-.vs-subtitle { font-size: 12px; color: var(--text3); margin-top: 2px; }
-.vs-header-right { display: flex; align-items: center; gap: 10px; }
-.vs-upload-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--red); color: #fff;
-  font-family: var(--font-body); font-size: 13px; font-weight: 600;
-  padding: 8px 18px; border-radius: var(--radius-pill);
-  border: none; cursor: pointer; transition: opacity 0.2s; text-decoration: none;
-}
-.vs-upload-btn:hover { opacity: 0.88; }
-.vs-live-badge {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 11px; font-weight: 600; color: var(--red);
-  background: rgba(239,68,68,0.12); border: 0.5px solid rgba(239,68,68,0.3);
-  padding: 4px 10px; border-radius: var(--radius-pill);
-}
-.vs-live-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--red); animation: pulse-dot 1.4s infinite;
-}
-@keyframes pulse-dot {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.4; transform:scale(0.75); }
-}
-
-/* VS FEATURED PLAYER */
-.vs-player-wrap {
-  position: relative; border-radius: var(--radius);
-  overflow: hidden; background: #000;
-  border: 0.5px solid var(--border2);
-  margin-bottom: 0.75rem;
-  aspect-ratio: 16/9;
-}
-.vs-player-wrap iframe, .vs-player-wrap video {
-  width: 100%; height: 100%; border: none; display: block;
-}
-/* VAST Ad overlay */
-.vast-ad-overlay {
-  position: absolute; inset: 0; z-index: 10;
-  background: linear-gradient(135deg, #0f0f14 0%, #1a1a2e 100%);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 12px;
-  transition: opacity 0.4s;
-}
-.vast-ad-overlay.hidden { opacity: 0; pointer-events: none; }
-.vast-ad-inner { text-align: center; max-width: 480px; padding: 2rem; }
-.vast-ad-label {
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--amber); background: var(--amber-bg);
-  border: 0.5px solid rgba(245,158,11,0.25);
-  padding: 3px 10px; border-radius: var(--radius-pill);
-  display: inline-block; margin-bottom: 1rem;
-}
-.vast-ad-product {
-  font-family: var(--font-display); font-size: 24px; font-weight: 800;
-  margin-bottom: 8px; line-height: 1.2;
-}
-.vast-ad-product em {
-  font-style: normal;
-  background: linear-gradient(135deg, #7c6dff, #ec4899);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.vast-ad-desc { font-size: 13px; color: var(--text2); margin-bottom: 1.25rem; }
-.vast-ad-cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: linear-gradient(135deg, #7c6dff, #a78bfa);
-  color: #fff; font-weight: 600; font-size: 13px;
-  padding: 9px 22px; border-radius: var(--radius-pill);
-  text-decoration: none; transition: opacity 0.2s;
-}
-.vast-ad-cta:hover { opacity: 0.85; }
-.vast-skip-row {
-  display: flex; align-items: center; gap: 10px;
-  position: absolute; bottom: 18px; right: 18px;
-}
-.vast-skip-btn {
-  font-family: var(--font-body); font-size: 12px; font-weight: 600;
-  background: rgba(255,255,255,0.15); color: #fff;
-  border: 0.5px solid rgba(255,255,255,0.25);
-  padding: 6px 14px; border-radius: var(--radius-pill);
-  cursor: pointer; transition: background 0.2s; display: none;
-}
-.vast-skip-btn:hover { background: rgba(255,255,255,0.25); }
-.vast-countdown {
-  font-size: 11px; color: var(--text3); white-space: nowrap;
-}
-.vast-progress {
-  position: absolute; bottom: 0; left: 0;
-  height: 3px; background: var(--accent);
-  width: 0%; transition: width 0.1s linear;
-}
-
-/* VS PLAYER META */
-.vs-player-meta {
-  margin-bottom: 1.25rem;
-}
-.vs-video-title {
-  font-family: var(--font-display); font-size: 17px; font-weight: 700;
-  color: var(--text); margin-bottom: 6px; line-height: 1.3;
-}
-.vs-video-stats {
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-}
-.vs-stat-pill {
-  font-size: 11px; color: var(--text3);
-  display: flex; align-items: center; gap: 4px;
-}
-.vs-action-row {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-  margin-top: 10px;
-}
-.vs-action-btn {
-  display: flex; align-items: center; gap: 5px;
-  background: var(--surface2); border: 0.5px solid var(--border2);
-  color: var(--text2); font-size: 12px; font-weight: 500;
-  padding: 6px 14px; border-radius: var(--radius-pill);
-  cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
-}
-.vs-action-btn:hover { background: var(--surface); color: var(--text); border-color: var(--accent); }
-.vs-action-btn.liked { color: var(--accent2); border-color: var(--accent2); }
-
-/* VS GRID LAYOUT */
-.vs-layout { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; }
-@media (max-width: 768px) { .vs-layout { grid-template-columns: 1fr; } }
-
-/* VS SIDEBAR */
-.vs-sidebar-title {
-  font-family: var(--font-display); font-size: 13px; font-weight: 700;
-  color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em;
-  margin-bottom: 12px;
-}
-.vs-queue { display: flex; flex-direction: column; gap: 12px; }
-.vs-queue-card {
-  display: flex; gap: 10px; cursor: pointer;
-  padding: 8px; border-radius: var(--radius-sm);
-  border: 0.5px solid transparent;
-  transition: background 0.2s, border-color 0.2s;
-}
-.vs-queue-card:hover { background: var(--surface2); border-color: var(--border); }
-.vs-queue-card.playing { background: rgba(124,109,255,0.1); border-color: rgba(124,109,255,0.3); }
-.vs-queue-thumb {
-  width: 100px; min-width: 100px; aspect-ratio: 16/9;
-  border-radius: 6px; overflow: hidden; position: relative; background: #111;
-}
-.vs-queue-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.vs-queue-dur {
-  position: absolute; bottom: 3px; right: 3px;
-  background: rgba(0,0,0,0.8); color: #fff;
-  font-size: 9px; font-weight: 600; padding: 1px 4px; border-radius: 3px;
-}
-.vs-queue-info { flex: 1; min-width: 0; }
-.vs-queue-title {
-  font-size: 12px; font-weight: 600; color: var(--text);
-  line-height: 1.4; display: -webkit-box;
-  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  margin-bottom: 4px;
-}
-.vs-queue-meta { font-size: 10px; color: var(--text3); }
-
-/* VS VIDEO BROWSE GRID */
-.vs-browse-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin: 2rem 0 1rem;
-}
-.vs-browse-title {
-  font-family: var(--font-display); font-size: 16px; font-weight: 700;
-}
-.vs-browse-filters {
-  display: flex; gap: 6px; flex-wrap: wrap;
-}
-.vs-cat-btn {
-  font-size: 11px; font-weight: 500;
-  padding: 4px 12px; border-radius: var(--radius-pill);
-  border: 0.5px solid var(--border2); background: transparent;
-  color: var(--text2); cursor: pointer; transition: all 0.2s;
-  font-family: var(--font-body);
-}
-.vs-cat-btn.active, .vs-cat-btn:hover {
-  background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.4); color: #ff6b6b;
-}
-.vs-video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-}
-.vs-vid-card {
-  cursor: pointer; transition: transform 0.2s;
-}
-.vs-vid-card:hover { transform: translateY(-3px); }
-.vs-vid-thumb {
-  position: relative; aspect-ratio: 16/9;
-  border-radius: var(--radius-sm); overflow: hidden;
-  background: var(--surface); margin-bottom: 10px;
-}
-.vs-vid-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.vs-vid-card:hover .vs-vid-thumb img { transform: scale(1.05); }
-.vs-vid-overlay {
-  position: absolute; inset: 0; background: rgba(0,0,0,0.3);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.2s; border-radius: var(--radius-sm);
-}
-.vs-vid-card:hover .vs-vid-overlay { opacity: 1; }
-.vs-play-circle {
-  width: 42px; height: 42px; border-radius: 50%;
-  background: rgba(239,68,68,0.9);
-  display: flex; align-items: center; justify-content: center;
-}
-.vs-play-circle svg { width: 18px; height: 18px; fill: white; margin-left: 2px; }
-.vs-vid-dur {
-  position: absolute; bottom: 6px; right: 6px;
-  background: rgba(0,0,0,0.8); color: #fff;
-  font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px;
-}
-.vs-vid-cat {
-  position: absolute; top: 6px; left: 6px;
-  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
-  padding: 2px 7px; border-radius: 4px; color: #fff;
-  background: rgba(239,68,68,0.85);
-}
-.vs-vid-title {
-  font-size: 13px; font-weight: 600; color: var(--text);
-  line-height: 1.4; margin-bottom: 4px;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.vs-vid-meta { font-size: 11px; color: var(--text3); display: flex; gap: 6px; align-items: center; }
-
-/* ── VIDEO PLAYER PAGE OVERLAY ── */
-.player-page {
-  display: none;
-  position: fixed; inset: 0; z-index: 500;
-  background: var(--bg);
-  overflow-y: auto;
-}
-.player-page.open { display: block; }
-.player-nav {
-  display: flex; align-items: center; gap: 12px;
-  padding: 12px 2rem;
-  background: rgba(10,10,15,0.9); backdrop-filter: blur(20px);
-  border-bottom: 0.5px solid var(--border);
-  position: sticky; top: 0; z-index: 10;
-}
-.player-back {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 13px; color: var(--text2); cursor: pointer;
-  background: var(--surface2); border: 0.5px solid var(--border);
-  padding: 6px 14px; border-radius: var(--radius-pill); transition: all 0.2s;
-  font-family: var(--font-body); font-weight: 500;
-}
-.player-back:hover { color: var(--text); border-color: var(--border2); }
-.player-nav-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
-.player-content { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; }
-.player-main { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; }
-@media (max-width: 800px) { .player-main { grid-template-columns: 1fr; } }
-.player-video-wrap {
-  aspect-ratio: 16/9; border-radius: var(--radius);
-  overflow: hidden; background: #000;
-  border: 0.5px solid var(--border2); position: relative;
-}
-.player-video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-/* VAST inline in player page */
-.vast-inline {
-  position: absolute; inset: 0; z-index: 20;
-  background: #0a0a14;
-  display: flex; flex-direction: column; justify-content: space-between;
-}
-.vast-inline.hidden { display: none; }
-.vast-inline-content {
-  flex: 1; display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 1.5rem; text-align: center;
-}
-.vast-logo { font-size: 38px; margin-bottom: 12px; }
-.vast-inline-label {
-  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--amber); background: var(--amber-bg); border: 0.5px solid rgba(245,158,11,0.25);
-  padding: 2px 9px; border-radius: 99px; display: inline-block; margin-bottom: 10px;
-}
-.vast-inline-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
-.vast-inline-title em {
-  font-style: normal;
-  background: linear-gradient(135deg,#7c6dff,#ec4899);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-}
-.vast-inline-body { font-size: 12px; color: var(--text2); margin-bottom: 14px; }
-.vast-inline-link {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: linear-gradient(135deg, #7c6dff, #a78bfa); color: #fff;
-  font-size: 12px; font-weight: 600; padding: 8px 20px; border-radius: 99px;
-  text-decoration: none;
-}
-.vast-inline-bar {
-  height: 4px; background: var(--surface2);
-  position: relative; overflow: hidden;
-}
-.vast-inline-progress {
-  height: 100%; background: linear-gradient(90deg, var(--accent), #ec4899);
-  width: 0%; transition: width 0.1s linear;
-}
-.vast-inline-bottom {
-  padding: 10px 14px; display: flex; align-items: center; justify-content: space-between;
-  background: rgba(0,0,0,0.4);
-}
-.vast-inline-timer { font-size: 11px; color: var(--text3); }
-.vast-inline-skip {
-  font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.12);
-  color: #fff; border: 0.5px solid rgba(255,255,255,0.2);
-  padding: 4px 12px; border-radius: 99px; cursor: pointer;
-  font-family: var(--font-body); display: none;
-}
-.vast-inline-skip:hover { background: rgba(255,255,255,0.22); }
-
-.player-info { margin-top: 1rem; }
-.player-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-.player-meta { font-size: 12px; color: var(--text3); margin-bottom: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
-.player-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
-.player-action {
-  display: flex; align-items: center; gap: 5px;
-  background: var(--surface2); border: 0.5px solid var(--border2);
-  color: var(--text2); font-size: 12px; font-weight: 500;
-  padding: 6px 14px; border-radius: var(--radius-pill);
-  cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
-}
-.player-action:hover { background: var(--surface); color: var(--text); border-color: var(--accent); }
-.player-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
-.player-sidebar {}
-.player-sidebar-title {
-  font-family: var(--font-display); font-size: 13px; font-weight: 700;
-  color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;
-}
-.player-queue { display: flex; flex-direction: column; gap: 12px; }
-.pq-card {
-  display: flex; gap: 10px; cursor: pointer; padding: 8px;
-  border-radius: var(--radius-sm); border: 0.5px solid transparent;
-  transition: background 0.2s, border-color 0.2s;
-}
-.pq-card:hover { background: var(--surface2); border-color: var(--border); }
-.pq-card.active { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); }
-.pq-thumb {
-  width: 96px; min-width: 96px; aspect-ratio: 16/9;
-  border-radius: 6px; overflow: hidden; background: var(--surface); position: relative;
-}
-.pq-thumb img { width:100%; height:100%; object-fit: cover; display: block; }
-.pq-dur {
-  position: absolute; bottom: 3px; right: 3px;
-  background: rgba(0,0,0,0.8); color: #fff;
-  font-size: 9px; font-weight: 600; padding: 1px 4px; border-radius: 3px;
-}
-.pq-info { flex: 1; min-width: 0; }
-.pq-title {
-  font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-  margin-bottom: 3px;
-}
-.pq-meta { font-size: 10px; color: var(--text3); }
-
-/* CREATOR SECTION */
+/* ── CREATOR SECTION ── */
 .creator-section {
-  position: relative; z-index: 1;
-  max-width: 900px; margin: 2rem auto;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 2rem auto;
   padding: 0 2rem 4rem;
 }
 .creator-header {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
-.section-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--text); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
 .creator-upload-btn {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: linear-gradient(135deg, #7c6dff 0%, #a78bfa 100%);
-  color: #fff; font-family: var(--font-body); font-size: 13px; font-weight: 600;
-  padding: 9px 20px; border-radius: var(--radius-pill); border: none;
-  cursor: pointer; transition: opacity 0.2s, transform 0.2s;
-  text-decoration: none; letter-spacing: 0.02em;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.02em;
 }
 .creator-upload-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 .creator-upload-btn svg { width: 15px; height: 15px; stroke: #fff; fill: none; flex-shrink: 0; }
 .creator-hero {
   background: linear-gradient(135deg, rgba(124,109,255,0.12) 0%, rgba(167,139,250,0.08) 100%);
   border: 0.5px solid rgba(124,109,255,0.25);
-  border-radius: var(--radius); padding: 2rem; margin-bottom: 1.25rem;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1.5rem; flex-wrap: wrap;
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
-.creator-hero-text h2 { font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+.creator-hero-text h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
 .creator-hero-text h2 span { color: var(--accent2); }
 .creator-hero-text p { font-size: 13px; color: var(--text2); max-width: 420px; line-height: 1.6; }
-.creator-stats { display: flex; gap: 1.5rem; flex-shrink: 0; }
+.creator-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
 .creator-stat { text-align: center; }
 .creator-stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--accent2); }
 .creator-stat-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
-.monetize-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.monetize-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
 .monetize-card {
-  background: var(--surface); border: 0.5px solid var(--border);
-  border-radius: var(--radius); padding: 1.25rem;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
   transition: border-color 0.2s, transform 0.2s;
 }
 .monetize-card:hover { border-color: var(--border2); transform: translateY(-2px); }
@@ -705,174 +587,482 @@ nav {
 .monetize-card p { font-size: 12px; color: var(--text2); }
 .earning { font-size: 13px; color: var(--green); font-weight: 500; margin-top: 6px; }
 
-/* UPLOAD MODAL */
+/* ── UPLOAD MODAL ── */
 .modal-backdrop {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
-  z-index: 200; align-items: center; justify-content: center; padding: 1rem;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 .modal-backdrop.open { display: flex; }
 .modal {
-  background: var(--surface); border: 0.5px solid var(--border2);
-  border-radius: 16px; width: 100%; max-width: 520px; max-height: 90vh;
-  overflow-y: auto; padding: 2rem; position: relative;
+  background: var(--surface);
+  border: 0.5px solid var(--border2);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
   animation: modalIn 0.25s ease;
 }
 @keyframes modalIn {
-  from { opacity:0; transform:translateY(16px) scale(0.97); }
-  to { opacity:1; transform:translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 .modal-close {
-  position: absolute; top:1rem; right:1rem;
-  background: var(--surface2); border: 0.5px solid var(--border);
-  border-radius: 50%; width:32px; height:32px;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer; color:var(--text2); font-size:16px; transition:background 0.2s;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text2); font-size: 16px;
+  transition: background 0.2s;
 }
-.modal-close:hover { background:var(--bg3); color:var(--text); }
-.modal-title { font-family:var(--font-display); font-size:20px; font-weight:800; margin-bottom:4px; }
-.modal-subtitle { font-size:13px; color:var(--text2); margin-bottom:1.5rem; }
+.modal-close:hover { background: var(--bg3); color: var(--text); }
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.modal-subtitle { font-size: 13px; color: var(--text2); margin-bottom: 1.5rem; }
 .upload-drop {
-  border:1.5px dashed rgba(124,109,255,0.4); border-radius:var(--radius);
-  padding:2rem; text-align:center; cursor:pointer;
-  transition:border-color 0.2s, background 0.2s; margin-bottom:1.25rem;
-  background:rgba(124,109,255,0.04);
+  border: 1.5px dashed rgba(124,109,255,0.4);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 1.25rem;
+  background: rgba(124,109,255,0.04);
 }
-.upload-drop:hover, .upload-drop.drag-over { border-color:var(--accent2); background:rgba(124,109,255,0.08); }
-.upload-drop-icon { font-size:36px; margin-bottom:8px; }
-.upload-drop-text { font-size:14px; font-weight:500; color:var(--text); margin-bottom:4px; }
-.upload-drop-sub { font-size:11px; color:var(--text3); }
-.upload-drop input[type=file] { display:none; }
-.upload-filename { font-size:12px; color:var(--accent2); margin-top:8px; display:none; }
-.form-group { margin-bottom:1rem; }
-.form-label { font-size:12px; color:var(--text2); margin-bottom:6px; display:block; font-weight:500; }
+.upload-drop:hover, .upload-drop.drag-over { border-color: var(--accent2); background: rgba(124,109,255,0.08); }
+.upload-drop-icon { font-size: 36px; margin-bottom: 8px; }
+.upload-drop-text { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.upload-drop-sub { font-size: 11px; color: var(--text3); }
+.upload-drop input[type=file] { display: none; }
+.upload-filename {
+  font-size: 12px;
+  color: var(--accent2);
+  margin-top: 8px;
+  display: none;
+}
+.form-group { margin-bottom: 1rem; }
+.form-label { font-size: 12px; color: var(--text2); margin-bottom: 6px; display: block; font-weight: 500; }
 .form-input, .form-textarea, .form-select {
-  width:100%; background:var(--bg3); border:0.5px solid var(--border2);
-  border-radius:var(--radius-sm); color:var(--text);
-  font-family:var(--font-body); font-size:13px; padding:10px 12px;
-  outline:none; transition:border-color 0.2s;
+  width: 100%;
+  background: var(--bg3);
+  border: 0.5px solid var(--border2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
 }
-.form-input:focus, .form-textarea:focus, .form-select:focus { border-color:rgba(124,109,255,0.5); }
-.form-input::placeholder, .form-textarea::placeholder { color:var(--text3); }
-.form-textarea { resize:vertical; min-height:80px; }
-.form-select option { background:var(--surface); }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-input:focus, .form-textarea:focus, .form-select:focus { border-color: rgba(124,109,255,0.5); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text3); }
+.form-textarea { resize: vertical; min-height: 80px; }
+.form-select option { background: var(--surface); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .earn-note {
-  background:var(--green-bg); border:0.5px solid rgba(34,197,94,0.2);
-  border-radius:var(--radius-sm); padding:10px 14px; font-size:12px;
-  color:var(--green); margin-bottom:1.25rem; display:flex; gap:8px; align-items:flex-start;
+  background: var(--green-bg);
+  border: 0.5px solid rgba(34,197,94,0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--green);
+  margin-bottom: 1.25rem;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
 }
 .submit-btn {
-  width:100%; padding:12px;
-  background:linear-gradient(135deg,#7c6dff 0%,#a78bfa 100%);
-  color:#fff; font-family:var(--font-body); font-size:14px; font-weight:600;
-  border:none; border-radius:var(--radius-pill); cursor:pointer; transition:opacity 0.2s;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #7c6dff 0%, #a78bfa 100%);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
-.submit-btn:hover { opacity:0.88; }
-.submit-success { display:none; text-align:center; padding:2rem 1rem; }
-.submit-success-icon { font-size:48px; margin-bottom:12px; }
-.submit-success h3 { font-size:18px; font-weight:700; margin-bottom:6px; }
-.submit-success p { font-size:13px; color:var(--text2); }
+.submit-btn:hover { opacity: 0.88; }
+.submit-success {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.submit-success-icon { font-size: 48px; margin-bottom: 12px; }
+.submit-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.submit-success p { font-size: 13px; color: var(--text2); }
 
-/* FOOTER */
+/* ── VIDEO SECTION ── */
+.video-section {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
+}
+.video-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.video-section-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.video-section-title .live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: inline-block;
+  animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.video-section-link {
+  font-size: 12px;
+  color: var(--accent2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border: 0.5px solid rgba(124,109,255,0.3);
+  border-radius: var(--radius-pill);
+  transition: background 0.2s;
+}
+.video-section-link:hover { background: rgba(124,109,255,0.1); }
+.video-featured {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  border: 0.5px solid var(--border2);
+  margin-bottom: 1rem;
+}
+.video-featured iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.video-featured-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--surface);
+  cursor: pointer;
+}
+.video-play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(124,109,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+.video-play-btn:hover { transform: scale(1.1); background: var(--accent); }
+.video-play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+.video-featured-label {
+  font-size: 13px;
+  color: var(--text2);
+  font-weight: 500;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+.video-card:hover .thumbnail img { transform: scale(1.05); }
+.thumbnail {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  position: relative;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+.video-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+}
+.video-card:hover .video-thumb-overlay { opacity: 1; }
+.thumb-play {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(124,109,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumb-play svg { width: 16px; height: 16px; fill: white; margin-left: 2px; }
+.video-info { padding: 4px 0; }
+.video-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.video-meta {
+  font-size: 11px;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.video-duration {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+/* ── VIDEO SUTRA OVERLAY PLAYER ── */
+.vs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+.vs-overlay.open { display: flex; }
+.vs-modal {
+  width: 92vw;
+  max-width: 980px;
+  background: #0e0e14;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+  animation: vsIn 0.22s ease;
+}
+@keyframes vsIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.vs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.07);
+  background: #0a0a0f;
+  gap: 12px;
+}
+.vs-brand {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c6dff, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+.vs-header-title {
+  font-size: 12px;
+  color: var(--text2);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vs-close {
+  background: rgba(255,255,255,0.07);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.vs-close:hover { background: rgba(255,255,255,0.15); }
+.vs-player-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  overflow: hidden;
+}
+.vs-player-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.vs-ad-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.vs-ad-ui {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.vs-ad-countdown {
+  background: rgba(0,0,0,0.75);
+  color: #bbb;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.vs-skip-btn {
+  background: rgba(20,20,30,0.9);
+  border: 0.5px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.vs-skip-btn:hover { background: rgba(124,109,255,0.4); }
+.vs-info {
+  padding: 14px 18px;
+  background: #0a0a0f;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+}
+.vs-info-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.vs-info-meta { font-size: 11px; color: var(--text3); }
+
+/* Video Sutra section heading */
+.vs-section-heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c6dff 0%, #a78bfa 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── FOOTER ── */
 footer {
-  position:relative; z-index:1; border-top:0.5px solid var(--border);
-  padding:2rem; text-align:center; color:var(--text3); font-size:12px;
+  position: relative;
+  z-index: 1;
+  border-top: 0.5px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text3);
+  font-size: 12px;
 }
-footer a { color:var(--text2); text-decoration:none; }
-footer a:hover { color:var(--accent2); }
-.footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; flex-wrap:wrap; }
+footer a { color: var(--text2); text-decoration: none; }
+footer a:hover { color: var(--accent2); }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   nav { padding: 0 1rem; }
   .nav-links { display: none; }
   .hero { padding: 3rem 1rem 2rem; }
   .hero h1 { font-size: 1.8rem; }
-  .controls, .grid, .results-info, .ad-banner, .mid-ad { padding-left: 1rem; padding-right: 1rem; }
+  .controls, .grid, .results-info, .ad-banner, .mid-ad, .monetize { padding-left: 1rem; padding-right: 1rem; }
   .grid { grid-template-columns: 1fr; }
   .stats-bar { margin: 0 1rem 2rem; }
-  .videosutra-section { padding: 0 1rem; }
-  .vs-layout { grid-template-columns: 1fr; }
-  .creator-section { padding: 0 1rem 3rem; }
-  .player-content { padding: 1rem; }
 }
+
 </style>
 </head>
 <body>
 
 <div class="glow-blob"></div>
 
-<!-- ======================= VIDEO PLAYER PAGE ======================= -->
-<div class="player-page" id="player-page">
-  <div class="player-nav">
-    <button class="player-back" onclick="closePlayer()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      Back
-    </button>
-    <div class="player-nav-title" id="player-nav-title">📺 VideoSutra</div>
-  </div>
-  <div class="player-content">
-    <div class="player-main">
-      <div>
-        <div class="player-video-wrap" id="player-video-wrap">
-          <!-- VAST Ad (inline) -->
-          <div class="vast-inline" id="vast-inline">
-            <div class="vast-inline-content">
-              <div class="vast-logo" id="vast-inline-emoji">🤖</div>
-              <div class="vast-inline-label">📢 Sponsored · VAST Ad</div>
-              <div class="vast-inline-title" id="vast-inline-title">Try <em>Claude AI</em> Free</div>
-              <div class="vast-inline-body" id="vast-inline-body">India's favourite AI writing & content tool. Join 10 lakh+ creators using Claude daily.</div>
-              <a class="vast-inline-link" id="vast-inline-link" href="#" target="_blank" rel="noopener">
-                Try Free Now →
-              </a>
-            </div>
-            <div>
-              <div class="vast-inline-bar"><div class="vast-inline-progress" id="vast-inline-progress"></div></div>
-              <div class="vast-inline-bottom">
-                <div class="vast-inline-timer" id="vast-inline-timer">Ad · 8s</div>
-                <button class="vast-inline-skip" id="vast-inline-skip" onclick="skipVastInline()">Skip Ad ›</button>
-              </div>
-            </div>
-          </div>
-          <!-- Actual video iframe loads here -->
-          <div id="player-iframe-slot"></div>
-        </div>
-        <div class="player-info">
-          <div class="player-title" id="player-title">Loading...</div>
-          <div class="player-meta">
-            <span id="player-views">📺 AIDesignSutra</span>
-            <span id="player-duration">·</span>
-            <span id="player-cat">Free Footage</span>
-          </div>
-          <div class="player-actions">
-            <button class="player-action" onclick="this.classList.toggle('liked');this.textContent=this.classList.contains('liked')?'👍 Liked':'👍 Like'">👍 Like</button>
-            <button class="player-action">📤 Share</button>
-            <button class="player-action">💾 Save</button>
-            <button class="player-action" onclick="openUploadModal()">🎬 Upload Video</button>
-          </div>
-          <div class="player-desc" id="player-desc">Enjoy this free high-quality footage from the VideoSutra library. Free to use for creators.</div>
-        </div>
-        <!-- Mid-roll ad slot -->
-        <div style="margin-top:1.25rem">
-          <div class="ad-slot" style="min-height:70px">
-            <div style="width:100%">
-              <div class="ad-slot-label">VideoSutra — Mid-Roll Ad Slot (AdSense)</div>
-              <span style="font-size:11px">Replace with &lt;ins&gt; tag after AdSense approval</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Player Sidebar -->
-      <div class="player-sidebar">
-        <div class="player-sidebar-title">Up Next</div>
-        <div class="player-queue" id="player-queue"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ======================= MAIN PAGE ======================= -->
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <span class="nav-flag">🇮🇳</span>
@@ -880,19 +1070,15 @@ footer a:hover { color:var(--accent2); }
   </a>
   <div class="nav-links">
     <a href="#tools">Tools</a>
-    <a href="#videosutra" class="vs-link">
-      <svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
-      VideoSutra
-    </a>
     <a href="#creator">Creator</a>
-    <a href="mailto:aidesignsutra@gmail.com">Submit Tool</a>
-    <a href="https://aidesign72.gumroad.com" target="_blank" rel="noopener" class="nav-cta">Get Started Free →</a>
+    <a href="https://claude.ai" target="_blank" rel="noopener">Submit a Tool</a>
+    <a href="https://claude.ai" target="_blank" rel="noopener" class="nav-cta">Get Started Free →</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">🚀 Updated June 2025 · 30+ Tools</div>
+  <div class="hero-badge">🚀 Updated June 2025</div>
   <h1>Best <em>AI Tools</em> for Creators</h1>
   <p>Discover free & paid AI tools for video, design, writing, audio & more. Curated for creators, freelancers & entrepreneurs by AIDesignSutra.</p>
 </section>
@@ -900,25 +1086,38 @@ footer a:hover { color:var(--accent2); }
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat-item">
-    <div class="stat-num accent" id="total-count">30</div>
+    <div class="stat-num accent" id="total-count">35</div>
     <div class="stat-label">Total Tools</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num green" id="free-count">21</div>
+    <div class="stat-num green" id="free-count">27</div>
     <div class="stat-label">Free Plans</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num" id="shown-count">30</div>
+    <div class="stat-num" id="shown-count">35</div>
     <div class="stat-label">Showing</div>
   </div>
 </div>
 
-<!-- TOP AD -->
+<!-- TOP AD BANNER -->
 <div class="ad-banner">
   <div class="ad-slot">
+    <!--
+      TOP BANNER AD — Replace values below with your AdSense Ad Unit details
+      Get Ad Unit ID from: AdSense → Ads → By ad unit → Display ads
+      Then delete the placeholder div and uncomment the ins tag:
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5552335746875325"
+           data-ad-slot="1111111111"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
     <div style="width:100%">
       <div class="ad-slot-label">Advertisement — Google AdSense (Top Banner)</div>
-      <span style="font-size:11px">👉 After AdSense approval, replace with &lt;ins class="adsbygoogle"&gt; tag — ca-pub-5552335746875325</span>
+      <span style="font-size:11px">👉 After AdSense approval, replace this placeholder with your &lt;ins&gt; tag</span>
     </div>
   </div>
 </div>
@@ -944,9 +1143,9 @@ footer a:hover { color:var(--accent2); }
   </div>
 </div>
 
-<!-- RESULTS -->
+<!-- RESULTS INFO -->
 <div class="results-info">
-  <div class="results-count" id="result-text">Showing <span>30</span> tools</div>
+  <div class="results-count" id="result-text">Showing <span>20</span> tools</div>
 </div>
 
 <!-- GRID -->
@@ -955,97 +1154,80 @@ footer a:hover { color:var(--accent2); }
 <!-- MID AD -->
 <div class="mid-ad">
   <div class="ad-slot">
+    <!--
+      MID-PAGE AD — Create a second Ad Unit in AdSense for this slot
+      Use a different data-ad-slot number than the top banner
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5552335746875325"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
     <div style="width:100%">
       <div class="ad-slot-label">Advertisement — Google AdSense (Mid Banner)</div>
-      <span style="font-size:11px">👉 After AdSense approval, replace with &lt;ins&gt; tag — slot 2222222222</span>
+      <span style="font-size:11px">👉 After AdSense approval, replace this placeholder with your &lt;ins&gt; tag</span>
     </div>
   </div>
 </div>
 
-<!-- ======================= VIDEO SUTRA ======================= -->
-<section class="videosutra-section" id="videosutra">
-  <div class="vs-header">
-    <div class="vs-brand">
-      <div class="vs-logo">
-        <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
-      </div>
-      <div>
-        <div class="vs-title">Video<span>Sutra</span></div>
-        <div class="vs-subtitle">by AIDesignSutra · Free AI Video Library for Indian Creators</div>
-      </div>
-    </div>
-    <div class="vs-header-right">
-      <div class="vs-live-badge"><div class="vs-live-dot"></div> LIVE</div>
-      <button class="vs-upload-btn" onclick="openUploadModal()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
-        Upload
-      </button>
+<!-- VIDEO SUTRA SECTION -->
+<section class="video-section" id="videos">
+  <div class="video-section-header">
+    <div class="vs-section-heading">
+      <span class="live-dot"></span>
+      🎬 Video Sutra
     </div>
   </div>
 
-  <!-- Layout: featured player + sidebar -->
-  <div class="vs-layout">
-    <!-- Featured Player -->
-    <div>
-      <div class="vs-player-wrap" id="vs-featured-wrap">
-        <!-- VAST Pre-roll overlay -->
-        <div class="vast-ad-overlay" id="vast-overlay">
-          <div class="vast-ad-inner">
-            <div class="vast-ad-label">📢 Advertisement · VAST Pre-roll</div>
-            <div class="vast-ad-product" id="vast-product-name">Try <em>Claude AI</em> Free</div>
-            <div class="vast-ad-desc" id="vast-product-desc">India's #1 AI for content creators. Write blogs, scripts, captions & more in seconds — 100% free to start.</div>
-            <a class="vast-ad-cta" id="vast-cta-link" href="https://claude.ai" target="_blank" rel="noopener">Start Free Now →</a>
-          </div>
-          <div class="vast-skip-row">
-            <div class="vast-countdown" id="vast-countdown">Ad ends in 5s</div>
-            <button class="vast-skip-btn" id="vast-skip-btn" onclick="skipVastOverlay()">Skip Ad ›</button>
-          </div>
-          <div class="vast-progress" id="vast-progress"></div>
-        </div>
-        <div id="vs-featured-iframe"></div>
+  <!-- Featured player -->
+  <div class="video-featured" id="featured-player">
+    <div class="video-featured-placeholder" onclick="openVideoSutra('pAtFdE3cBsQ','Beautiful Nature Landscape — Free Stock Footage 4K')">
+      <div class="video-play-btn">
+        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       </div>
-
-      <!-- Featured video meta -->
-      <div class="vs-player-meta" id="vs-featured-meta">
-        <div class="vs-video-title" id="vs-featured-title">Beautiful Nature Landscape — Free Stock Footage 4K</div>
-        <div class="vs-video-stats">
-          <div class="vs-stat-pill">👁 Free Footage</div>
-          <div class="vs-stat-pill">⏱ 2:30</div>
-          <div class="vs-stat-pill">📺 AIDesignSutra</div>
-          <div class="vs-stat-pill">🆓 Free to Use</div>
-        </div>
-        <div class="vs-action-row">
-          <button class="vs-action-btn" id="vs-like-btn" onclick="this.classList.toggle('liked');this.textContent=this.classList.contains('liked')?'👍 Liked':'👍 Like'">👍 Like</button>
-          <button class="vs-action-btn">📤 Share</button>
-          <button class="vs-action-btn">💾 Download</button>
-          <button class="vs-action-btn" onclick="openUploadModal()">🎬 Upload Yours</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sidebar Queue -->
-    <div>
-      <div class="vs-sidebar-title">Up Next</div>
-      <div class="vs-queue" id="vs-sidebar-queue"></div>
+      <div class="video-featured-label">▶ Click to Watch — Free Stock Footage &amp; AI Tutorials</div>
     </div>
   </div>
 
-  <!-- Browse more videos -->
-  <div class="vs-browse-header">
-    <div class="vs-browse-title">🎬 Browse All Videos</div>
-    <div class="vs-browse-filters">
-      <button class="vs-cat-btn active" data-vcat="all">All</button>
-      <button class="vs-cat-btn" data-vcat="Tutorial">Tutorial</button>
-      <button class="vs-cat-btn" data-vcat="Nature">Nature</button>
-      <button class="vs-cat-btn" data-vcat="Urban">Urban</button>
-      <button class="vs-cat-btn" data-vcat="Cinematic">Cinematic</button>
-    </div>
-  </div>
-  <div class="vs-video-grid" id="vs-video-grid"></div>
+  <!-- Ad unit — video section -->
+  <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="444549"></script>
+
+  <!-- Video grid -->
+  <div class="video-grid" id="video-grid"></div>
 </section>
 
-<!-- ======================= CREATOR ======================= -->
+<!-- VIDEO SUTRA PLAYER MODAL -->
+<div id="vs-overlay" class="vs-overlay" onclick="closeVSOnBackdrop(event)">
+  <div class="vs-modal">
+    <div class="vs-header">
+      <span class="vs-brand">🎬 VideoSutra</span>
+      <span class="vs-header-title" id="vs-title"></span>
+      <button class="vs-close" onclick="closeVideoSutra()">✕</button>
+    </div>
+    <div class="vs-player-wrap">
+      <div id="vs-ad-container" class="vs-ad-container"></div>
+      <iframe id="vs-iframe" allowfullscreen allow="autoplay; encrypted-media" src=""></iframe>
+      <div id="vs-ad-ui" class="vs-ad-ui" style="display:none">
+        <span class="vs-ad-countdown" id="vs-countdown">Ad: 5</span>
+        <button class="vs-skip-btn" id="vs-skip-btn" style="display:none" onclick="skipVSAd()">Skip Ad ›</button>
+      </div>
+    </div>
+    <div class="vs-info">
+      <div class="vs-info-title" id="vs-info-title"></div>
+      <div class="vs-info-meta">🎬 VideoSutra &nbsp;·&nbsp; Free Footage &amp; AI Tutorials</div>
+    </div>
+  </div>
+</div>
+
+<!-- Mid-page banner ad -->
+<div data-banner-id="2023088"></div>
+
+<!-- CREATOR SECTION -->
 <div class="creator-section" id="creator">
+
   <div class="creator-header">
     <div class="section-title">🎬 Creator Hub — Earn with Your Content</div>
     <button class="creator-upload-btn" onclick="openUploadModal()">
@@ -1053,22 +1235,53 @@ footer a:hover { color:var(--accent2); }
       Upload Your Video
     </button>
   </div>
+
   <div class="creator-hero">
     <div class="creator-hero-text">
       <h2>Share your content. <span>Get paid.</span></h2>
-      <p>Upload AI tutorials, tips, and creative videos on VideoSutra. Earn ad revenue share when viewers watch. Open to all Indian creators — beginners welcome!</p>
+      <p>Upload AI tutorials, tips, and creative videos. Earn ad revenue share when viewers watch your content. Open to all Indian creators — beginners welcome!</p>
     </div>
     <div class="creator-stats">
-      <div class="creator-stat"><div class="creator-stat-num">₹0</div><div class="creator-stat-label">To Join</div></div>
-      <div class="creator-stat"><div class="creator-stat-num">70%</div><div class="creator-stat-label">Revenue Share</div></div>
-      <div class="creator-stat"><div class="creator-stat-num">24h</div><div class="creator-stat-label">Review Time</div></div>
+      <div class="creator-stat">
+        <div class="creator-stat-num">₹0</div>
+        <div class="creator-stat-label">To Join</div>
+      </div>
+      <div class="creator-stat">
+        <div class="creator-stat-num">70%</div>
+        <div class="creator-stat-label">Revenue Share</div>
+      </div>
+      <div class="creator-stat">
+        <div class="creator-stat-num">Live</div>
+        <div class="creator-stat-label">Instantly</div>
+      </div>
     </div>
   </div>
+
   <div class="monetize-grid">
-    <div class="monetize-card"><div class="monetize-icon">📺</div><h3>Upload AI Tutorials</h3><p>Share how-to videos on AI tools. Earn ad revenue every time someone watches on VideoSutra.</p><div class="earning">₹5,000–50,000/month</div></div>
-    <div class="monetize-card"><div class="monetize-icon">🎨</div><h3>Print-on-Demand</h3><p>Generate AI art with Leonardo or Midjourney, sell on Redbubble & Merch by Amazon.</p><div class="earning">₹3,000–30,000/month</div></div>
-    <div class="monetize-card"><div class="monetize-icon">🤝</div><h3>Affiliate Marketing</h3><p>Recommend AI tools from this directory. Earn commission on every signup.</p><div class="earning">₹2,000–20,000/month</div></div>
-    <div class="monetize-card"><div class="monetize-icon">📝</div><h3>Freelance AI Services</h3><p>Offer AI content writing, voiceover, or design services on Fiverr & Upwork.</p><div class="earning">₹10,000–1,00,000/month</div></div>
+    <div class="monetize-card">
+      <div class="monetize-icon">📺</div>
+      <h3>Upload AI Tutorials</h3>
+      <p>Share how-to videos on AI tools. Earn ad revenue every time someone watches.</p>
+      <div class="earning">₹5,000–50,000/month</div>
+    </div>
+    <div class="monetize-card">
+      <div class="monetize-icon">🎨</div>
+      <h3>Print-on-Demand</h3>
+      <p>Generate AI art with Leonardo or Midjourney, sell on Redbubble & Merch by Amazon.</p>
+      <div class="earning">₹3,000–30,000/month</div>
+    </div>
+    <div class="monetize-card">
+      <div class="monetize-icon">🤝</div>
+      <h3>Affiliate Marketing</h3>
+      <p>Recommend AI tools from this directory. Earn commission on every signup.</p>
+      <div class="earning">₹2,000–20,000/month</div>
+    </div>
+    <div class="monetize-card">
+      <div class="monetize-icon">📝</div>
+      <h3>Freelance AI Services</h3>
+      <p>Offer AI content writing, voiceover, or design services on Fiverr & Upwork.</p>
+      <div class="earning">₹10,000–1,00,000/month</div>
+    </div>
   </div>
 </div>
 
@@ -1076,30 +1289,69 @@ footer a:hover { color:var(--accent2); }
 <div class="modal-backdrop" id="upload-modal" onclick="closeOnBackdrop(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeUploadModal()">✕</button>
+
     <div id="modal-form-view">
-      <div class="modal-title">🎬 Upload to VideoSutra</div>
+      <div class="modal-title">🎬 Upload Your Video</div>
       <div class="modal-subtitle">Share your AI content & start earning from day one</div>
-      <div class="earn-note"><span>💸</span><span>Creators earn <strong>70% ad revenue share</strong>. Payments sent monthly once you hit ₹500.</span></div>
-      <div class="upload-drop" id="drop-zone" onclick="document.getElementById('file-input').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleDrop(event)">
+
+      <div class="earn-note">
+        <span>💸</span>
+        <span>Creators earn <strong>70% ad revenue share</strong>. Payments sent monthly once you hit ₹500.</span>
+      </div>
+
+      <div class="upload-drop" id="drop-zone" onclick="document.getElementById('file-input').click()"
+           ondragover="event.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleDrop(event)">
         <input type="file" id="file-input" accept="video/*" onchange="handleFile(this)">
         <div class="upload-drop-icon">📁</div>
         <div class="upload-drop-text">Click to select or drag & drop your video</div>
         <div class="upload-drop-sub">MP4, MOV, AVI · Max 2 GB · Min 1 minute</div>
         <div class="upload-filename" id="file-name"></div>
       </div>
-      <div class="form-group"><label class="form-label">Video Title *</label><input type="text" class="form-input" placeholder="e.g. How I Made ₹10,000 Using Free AI Tools"></div>
-      <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" placeholder="Tell viewers what your video is about..."></textarea></div>
-      <div class="form-row">
-        <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option value="">Select category</option><option>AI Tutorial</option><option>Earn Money Online</option><option>Image Generation</option><option>Video Creation</option><option>Writing & Content</option><option>Automation</option><option>Other</option></select></div>
-        <div class="form-group"><label class="form-label">Your Name / Channel</label><input type="text" class="form-input" placeholder="e.g. TechWithRaj"></div>
+
+      <div class="form-group">
+        <label class="form-label">Video Title *</label>
+        <input type="text" class="form-input" placeholder="e.g. How I Made ₹10,000 Using Free AI Tools">
       </div>
-      <div class="form-group"><label class="form-label">Email (for payment) *</label><input type="email" class="form-input" placeholder="your@email.com"></div>
-      <button class="submit-btn" onclick="submitUpload()">🚀 Submit Video for Review</button>
+
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-textarea" placeholder="Tell viewers what your video is about..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select">
+            <option value="">Select category</option>
+            <option>AI Tutorial</option>
+            <option>Earn Money Online</option>
+            <option>Image Generation</option>
+            <option>Video Creation</option>
+            <option>Writing & Content</option>
+            <option>Automation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Name / Channel</label>
+          <input type="text" class="form-input" placeholder="e.g. TechWithRaj">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email (for payment) *</label>
+        <input type="email" class="form-input" placeholder="your@email.com">
+      </div>
+
+      <button class="submit-btn" onclick="submitUpload()">🚀 Upload Now</button>
     </div>
+
     <div class="submit-success" id="modal-success-view">
       <div class="submit-success-icon">🎉</div>
-      <h3>Video Submitted!</h3>
-      <p>We'll review your video within 24 hours. Once approved it goes live on VideoSutra and starts earning. Check your email for confirmation.</p>
+      <h3>Video Uploaded!</h3>
+      <p>Your video is now live in the Video Sutra section below. Start sharing it with your audience!</p>
     </div>
   </div>
 </div>
@@ -1109,50 +1361,49 @@ footer a:hover { color:var(--accent2); }
   <div class="footer-links">
     <a href="#">Home</a>
     <a href="#tools">All Tools</a>
-    <a href="#videosutra">VideoSutra</a>
     <a href="#creator">Creator</a>
-    <a href="mailto:aidesignsutra@gmail.com">Contact</a>
-    <a href="https://aidesign72.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+    <a href="mailto:your@email.com">Contact</a>
     <a href="#">Privacy Policy</a>
   </div>
   <p>© 2025 AIDesignSutra · Made with ❤️ for Indian Creators · All affiliate links help support this free directory</p>
 </footer>
 
-<!-- ======================= SCRIPTS ======================= -->
 <script>
-// ─── TOOLS DATA (30 tools) ───
 const tools = [
-  { name:"Claude",        cat:"Writing",    icon:"🤖", desc:"Best AI for writing, content creation & brainstorming. Trusted by millions worldwide.", free:true,  affiliate:true,  link:"https://claude.ai" },
-  { name:"ChatGPT",       cat:"Writing",    icon:"💬", desc:"Popular AI assistant for content, ideas, emails and creative writing tasks.", free:true,  affiliate:false, link:"https://chat.openai.com" },
-  { name:"Canva AI",      cat:"Design",     icon:"🎨", desc:"AI-powered design platform. Create posts, reels, thumbnails & presentations easily.", free:true,  affiliate:true,  link:"https://www.canva.com/join/your-referral-code" },
-  { name:"ElevenLabs",    cat:"Audio",      icon:"🎙️", desc:"Clone your voice or generate AI voiceovers in Hindi & English for any content.", free:true,  affiliate:true,  link:"https://elevenlabs.io" },
-  { name:"Runway ML",     cat:"Video",      icon:"🎬", desc:"Generate & edit videos with AI. Perfect for faceless YouTube channels & reels.", free:false, affiliate:true,  link:"https://runwayml.com" },
-  { name:"InVideo AI",    cat:"Video",      icon:"📹", desc:"Turn text prompts into full videos with voiceover. Great for YouTube creators.", free:true,  affiliate:true,  link:"https://invideo.io" },
-  { name:"Midjourney",    cat:"Image",      icon:"🖼️", desc:"Create stunning AI images from text. Best quality image generator for creators.", free:false, affiliate:false, link:"https://midjourney.com" },
-  { name:"Leonardo AI",   cat:"Image",      icon:"🎭", desc:"Free AI image generator with daily credits. Perfect for thumbnails, art & POD.", free:true,  affiliate:false, link:"https://leonardo.ai" },
-  { name:"Make.com",      cat:"Automation", icon:"⚡", desc:"Automate workflows without code. Connect apps & build powerful AI pipelines.", free:true,  affiliate:true,  link:"https://make.com" },
-  { name:"Notion AI",     cat:"Writing",    icon:"📓", desc:"AI inside Notion for writing, summarising & organising all your content.", free:false, affiliate:false, link:"https://notion.so" },
-  { name:"Descript",      cat:"Video",      icon:"✂️", desc:"Edit videos by editing text. Remove filler words & silences with one click.", free:true,  affiliate:false, link:"https://descript.com" },
-  { name:"Suno AI",       cat:"Audio",      icon:"🎵", desc:"Generate complete songs with lyrics from a simple text prompt. Fully free.", free:true,  affiliate:false, link:"https://suno.com" },
-  { name:"Pictory",       cat:"Video",      icon:"📺", desc:"Turn blog posts & scripts into short videos with AI automatically.", free:false, affiliate:true,  link:"https://pictory.ai" },
-  { name:"Adobe Firefly", cat:"Image",      icon:"🔥", desc:"AI image generation by Adobe. Commercial-safe with free monthly credits.", free:true,  affiliate:false, link:"https://firefly.adobe.com" },
-  { name:"Perplexity AI", cat:"Writing",    icon:"🔍", desc:"AI search engine with verified citations. Best for research & fact-checking.", free:true,  affiliate:false, link:"https://perplexity.ai" },
-  { name:"HeyGen",        cat:"Video",      icon:"🧑‍💻", desc:"Create AI avatar videos. Translate your videos to Hindi & regional languages.", free:true,  affiliate:true,  link:"https://heygen.com" },
-  { name:"Pika Labs",     cat:"Video",      icon:"✨", desc:"Text to video AI. Create short cinematic clips from simple text prompts.", free:true,  affiliate:false, link:"https://pika.art" },
-  { name:"Lovable.dev",   cat:"Business",   icon:"💻", desc:"Build full websites & web apps from a text prompt. Zero coding required.", free:true,  affiliate:false, link:"https://lovable.dev" },
-  { name:"Bolt.new",      cat:"Business",   icon:"⚡", desc:"Instant web app builder from prompt. Best for MVPs, SaaS & landing pages.", free:true,  affiliate:false, link:"https://bolt.new" },
-  { name:"FlutterFlow",   cat:"Business",   icon:"📱", desc:"Build mobile apps with AI assistance. Export code or publish to Play Store.", free:true,  affiliate:true,  link:"https://flutterflow.io" },
-  // 10 NEW TOOLS
-  { name:"Gemini AI",     cat:"Writing",    icon:"♊", desc:"Google's powerful AI for writing, coding & analysis. Deep Google Workspace integration.", free:true,  affiliate:false, link:"https://gemini.google.com" },
-  { name:"Kling AI",      cat:"Video",      icon:"🎥", desc:"AI video generator from Kuaishou. Create realistic videos from text or images.", free:true,  affiliate:false, link:"https://klingai.com" },
-  { name:"Ideogram AI",   cat:"Image",      icon:"🔤", desc:"AI image generator that renders text inside images — perfect for thumbnails & posters.", free:true,  affiliate:false, link:"https://ideogram.ai" },
-  { name:"n8n",           cat:"Automation", icon:"🔗", desc:"Open-source workflow automation. Build powerful AI agents & automations for free.", free:true,  affiliate:false, link:"https://n8n.io" },
-  { name:"Luma AI",       cat:"Video",      icon:"🌐", desc:"Dream Machine — create stunning realistic video clips from text. Used by top creators.", free:true,  affiliate:false, link:"https://lumalabs.ai" },
-  { name:"Udio AI",       cat:"Audio",      icon:"🎶", desc:"Generate music tracks in any genre with AI. Perfect for YouTube background music.", free:true,  affiliate:false, link:"https://udio.com" },
-  { name:"Fal.ai",        cat:"Image",      icon:"⚡", desc:"Fast AI image & video generation APIs. Run Flux, SDXL, and more at low cost.", free:true,  affiliate:false, link:"https://fal.ai" },
-  { name:"Beehiiv",       cat:"Business",   icon:"🐝", desc:"AI-powered newsletter platform. Grow & monetise your email list as an Indian creator.", free:true,  affiliate:true,  link:"https://beehiiv.com" },
-  { name:"Hostinger AI",  cat:"Business",   icon:"🌐", desc:"Build AI-powered websites instantly. Best affordable hosting for Indian creators.", free:false, affiliate:true,  link:"https://hostinger.in" },
-  { name:"CapCut AI",     cat:"Video",      icon:"✂️", desc:"Free AI video editor with auto-captions, background removal & trending templates.", free:true,  affiliate:false, link:"https://capcut.com" },
+  { name:"Claude", cat:"Writing", icon:"🤖", desc:"Best AI for writing, content creation & brainstorming. Trusted by millions worldwide.", free:true, affiliate:true, link:"https://claude.ai" },
+  { name:"ChatGPT", cat:"Writing", icon:"💬", desc:"Popular AI assistant for content, ideas, emails and creative writing tasks.", free:true, affiliate:false, link:"https://chat.openai.com" },
+  { name:"Canva AI", cat:"Design", icon:"🎨", desc:"AI-powered design platform. Create posts, reels, thumbnails & presentations easily.", free:true, affiliate:true, link:"https://www.canva.com/join/your-referral-code" },
+  { name:"ElevenLabs", cat:"Audio", icon:"🎙️", desc:"Clone your voice or generate AI voiceovers in Hindi & English for any content.", free:true, affiliate:true, link:"https://elevenlabs.io" },
+  { name:"Runway ML", cat:"Video", icon:"🎬", desc:"Generate & edit videos with AI. Perfect for faceless YouTube channels & reels.", free:false, affiliate:true, link:"https://runwayml.com" },
+  { name:"InVideo AI", cat:"Video", icon:"📹", desc:"Turn text prompts into full videos with voiceover. Great for YouTube creators.", free:true, affiliate:true, link:"https://invideo.io" },
+  { name:"Midjourney", cat:"Image", icon:"🖼️", desc:"Create stunning AI images from text. Best quality image generator for creators.", free:false, affiliate:false, link:"https://midjourney.com" },
+  { name:"Leonardo AI", cat:"Image", icon:"🎭", desc:"Free AI image generator with daily credits. Perfect for thumbnails, art & POD.", free:true, affiliate:false, link:"https://leonardo.ai" },
+  { name:"Make.com", cat:"Automation", icon:"⚡", desc:"Automate workflows without code. Connect apps & build powerful AI pipelines.", free:true, affiliate:true, link:"https://make.com" },
+  { name:"Notion AI", cat:"Writing", icon:"📓", desc:"AI inside Notion for writing, summarising & organising all your content.", free:false, affiliate:false, link:"https://notion.so" },
+  { name:"Descript", cat:"Video", icon:"✂️", desc:"Edit videos by editing text. Remove filler words & silences with one click.", free:true, affiliate:false, link:"https://descript.com" },
+  { name:"Suno AI", cat:"Audio", icon:"🎵", desc:"Generate complete songs with lyrics from a simple text prompt. Fully free.", free:true, affiliate:false, link:"https://suno.com" },
+  { name:"Pictory", cat:"Video", icon:"📺", desc:"Turn blog posts & scripts into short videos with AI automatically.", free:false, affiliate:true, link:"https://pictory.ai" },
+  { name:"Adobe Firefly", cat:"Image", icon:"🔥", desc:"AI image generation by Adobe. Commercial-safe with free monthly credits.", free:true, affiliate:false, link:"https://firefly.adobe.com" },
+  { name:"Perplexity AI", cat:"Writing", icon:"🔍", desc:"AI search engine with verified citations. Best for research & fact-checking.", free:true, affiliate:false, link:"https://perplexity.ai" },
+  { name:"HeyGen", cat:"Video", icon:"🧑‍💻", desc:"Create AI avatar videos. Translate your videos to Hindi & regional languages.", free:true, affiliate:true, link:"https://heygen.com" },
+  { name:"Pika Labs", cat:"Video", icon:"✨", desc:"Text to video AI. Create short cinematic clips from simple text prompts.", free:true, affiliate:false, link:"https://pika.art" },
+  { name:"Lovable.dev", cat:"Business", icon:"💻", desc:"Build full websites & web apps from a text prompt. Zero coding required.", free:true, affiliate:false, link:"https://lovable.dev" },
+  { name:"Bolt.new", cat:"Business", icon:"⚡", desc:"Instant web app builder from prompt. Best for MVPs, SaaS & landing pages.", free:true, affiliate:false, link:"https://bolt.new" },
+  { name:"FlutterFlow", cat:"Business", icon:"📱", desc:"Build mobile apps with AI assistance. Export code or publish to Play Store.", free:true, affiliate:true, link:"https://flutterflow.io" },
+  { name:"CapCut AI", cat:"Video", icon:"✂️", desc:"Free AI video editor for short-form content. Auto-captions, effects & transitions for Reels.", free:true, affiliate:false, link:"https://capcut.com" },
+  { name:"OpusClip", cat:"Video", icon:"🎞️", desc:"AI tool that turns long videos into viral short clips for Reels, Shorts & TikTok.", free:true, affiliate:false, link:"https://opus.pro" },
+  { name:"Kling AI", cat:"Video", icon:"🌀", desc:"High-quality text-to-video AI. Generate 5-second to 2-minute cinematic clips free.", free:true, affiliate:false, link:"https://klingai.com" },
+  { name:"Synthesia", cat:"Video", icon:"🧑‍🎤", desc:"Create AI presenter videos in 120+ languages. Best for training & explainer videos.", free:false, affiliate:true, link:"https://synthesia.io" },
+  { name:"D-ID", cat:"Video", icon:"🤖", desc:"Create talking AI avatar videos from a single photo. Perfect for digital humans.", free:true, affiliate:false, link:"https://d-id.com" },
+  { name:"Copy.ai", cat:"Writing", icon:"📝", desc:"AI copywriting for ads, emails, social posts & product descriptions in seconds.", free:true, affiliate:false, link:"https://copy.ai" },
+  { name:"Jasper AI", cat:"Writing", icon:"🖊️", desc:"AI writing assistant for long-form blogs, brand voice & marketing content at scale.", free:false, affiliate:true, link:"https://jasper.ai" },
+  { name:"Gamma.app", cat:"Design", icon:"🟣", desc:"AI presentation maker. Generate beautiful slides from any topic in seconds.", free:true, affiliate:false, link:"https://gamma.app" },
+  { name:"Framer AI", cat:"Design", icon:"🖥️", desc:"Build and publish stunning websites with AI. No design or code skills needed.", free:true, affiliate:false, link:"https://framer.com" },
+  { name:"Stable Diffusion", cat:"Image", icon:"🌌", desc:"Open-source AI image generator. Run locally for free or use Stability AI online.", free:true, affiliate:false, link:"https://stability.ai" },
+  { name:"Ideogram", cat:"Image", icon:"🔤", desc:"AI image generator that excels at text in images — perfect for logos & thumbnails.", free:true, affiliate:false, link:"https://ideogram.ai" },
+  { name:"Zapier AI", cat:"Automation", icon:"🔗", desc:"Automate thousands of app integrations with AI-powered workflows. No coding needed.", free:true, affiliate:true, link:"https://zapier.com" },
+  { name:"n8n", cat:"Automation", icon:"🔧", desc:"Open-source workflow automation. Self-host free or cloud. AI agents & API flows.", free:true, affiliate:false, link:"https://n8n.io" },
+  { name:"Otter.ai", cat:"Audio", icon:"📝", desc:"AI transcription & meeting notes. Real-time captions for calls, interviews & lectures.", free:true, affiliate:false, link:"https://otter.ai" },
 ];
 
 const catColors = {
@@ -1176,26 +1427,19 @@ function render() {
     const matchSearch = !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
+
   document.getElementById("shown-count").textContent = filtered.length;
   document.getElementById("result-text").innerHTML = `Showing <span>${filtered.length}</span> tool${filtered.length !== 1 ? "s" : ""}`;
+
   if (!filtered.length) {
     grid.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><h3>No tools found</h3><p>Try a different search or filter</p></div>`;
     return;
   }
+
   grid.innerHTML = filtered.map((t, i) => {
     const cc = catColors[t.cat] || { bg:"rgba(255,255,255,0.08)", text:"#aaa", dot:"#888" };
-    // Map tool to a related video ID for "View" button
-    const videoMap = {
-      "Runway ML": "pAtFdE3cBsQ", "InVideo AI": "IVpIoONBSzw", "Pika Labs": "LXb3EKWsInQ",
-      "HeyGen": "04854XqcfCY", "Descript": "ysz5S6PUM-U", "Kling AI": "8Yw6oOHBqkQ",
-      "Luma AI": "C0DPdy98e4c", "CapCut AI": "ZOZOcDiQEHI",
-    };
-    const vidId = videoMap[t.name] || null;
-    const viewBtn = vidId
-      ? `<button class="view-btn" onclick='openPlayer(${JSON.stringify(t.name)}, "${vidId}", "${t.desc}", "${t.cat}")' title="Watch ${t.name} tutorial on VideoSutra"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>View</button>`
-      : `<button class="view-btn" onclick='openPlayerRandom(${JSON.stringify(t.name)}, "${t.cat}")' title="Watch on VideoSutra"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>View</button>`;
     return `
-    <div class="card" style="animation-delay:${i * 0.03}s">
+    <div class="card" style="animation-delay:${i * 0.04}s">
       <div class="card-header">
         <div class="card-icon-name">
           <div class="card-icon" style="background:${cc.bg}; font-size:20px">${t.icon}</div>
@@ -1210,13 +1454,10 @@ function render() {
       <div class="card-desc">${t.desc}</div>
       <div class="card-footer">
         <span class="affiliate-tag">${t.affiliate ? "💰 Earn commission" : ""}</span>
-        <div class="card-actions">
-          ${viewBtn}
-          <button class="visit-btn" onclick="trackClick('${t.name.replace(/'/g,"\\'")}','${t.link}',${t.affiliate})" title="Visit ${t.name}">
-            Visit
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </button>
-        </div>
+        <button class="visit-btn" onclick="trackClick('${t.name.replace(/'/g,"\\'")}','${t.link}',${t.affiliate})" title="Visit ${t.name}">
+          Visit
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </button>
       </div>
     </div>`;
   }).join("");
@@ -1232,12 +1473,14 @@ const affiliateLinks = {
   "Pictory":     "https://pictory.ai/?ref=YOUR-CODE",
   "HeyGen":      "https://app.heygen.com/guest/home?sid=YOUR-CODE",
   "FlutterFlow": "https://flutterflow.io/?ref=YOUR-CODE",
-  "Beehiiv":     "https://www.beehiiv.com/?via=YOUR-CODE",
-  "Hostinger AI":"https://hostinger.in/?REFERRALCODE=YOUR-CODE",
 };
 
 function trackClick(toolName, toolUrl, isAffiliate) {
   const finalUrl = affiliateLinks[toolName] || toolUrl;
+  console.log(`[AIDesignSutra] Click: ${toolName} | Affiliate: ${isAffiliate} | URL: ${finalUrl}`);
+  if (typeof gtag !== "undefined") {
+    gtag("event", "tool_click", { event_category: isAffiliate ? "affiliate" : "regular", event_label: toolName, value: 1 });
+  }
   const key = "clicks_" + toolName.replace(/\s+/g, "_");
   localStorage.setItem(key, (parseInt(localStorage.getItem(key) || "0")) + 1);
   window.open(finalUrl, "_blank", "noopener");
@@ -1251,13 +1494,9 @@ document.getElementById("filters").addEventListener("click", e => {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.toggle("active", b === btn));
   render();
 });
+
 render();
 
-// update total & free counts
-document.getElementById("total-count").textContent = tools.length;
-document.getElementById("free-count").textContent = tools.filter(t => t.free).length;
-
-// ─── UPLOAD MODAL ───
 function openUploadModal() { document.getElementById("upload-modal").classList.add("open"); document.body.style.overflow = "hidden"; }
 function closeUploadModal() { document.getElementById("upload-modal").classList.remove("open"); document.body.style.overflow = ""; }
 function closeOnBackdrop(e) { if (e.target === document.getElementById("upload-modal")) closeUploadModal(); }
@@ -1274,249 +1513,216 @@ function handleDrop(e) {
   }
 }
 function submitUpload() {
+  const fileInput  = document.getElementById("file-input");
+  const titleEl    = document.querySelector('#modal-form-view .form-input[placeholder*="10,000"]');
+  const file       = fileInput.files[0];
+  const rawTitle   = titleEl ? titleEl.value.trim() : "";
+  const title      = rawTitle || (file ? file.name.replace(/\.[^.]+$/, "") : "My Uploaded Video");
+
+  if (file) {
+    const localUrl = URL.createObjectURL(file);
+    videos.unshift({ id: "local_" + Date.now(), title: title, views: "Just uploaded", duration: "●", localUrl: localUrl });
+    renderVideosGrid();
+  }
+
   document.getElementById("modal-form-view").style.display = "none";
   document.getElementById("modal-success-view").style.display = "block";
   setTimeout(() => {
     closeUploadModal();
     document.getElementById("modal-form-view").style.display = "block";
     document.getElementById("modal-success-view").style.display = "none";
-  }, 4000);
+    document.getElementById("videos").scrollIntoView({ behavior: "smooth" });
+  }, 2500);
 }
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") { closeUploadModal(); closePlayer(); }
-});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeUploadModal(); });
 
-// ─── VIDEO DATA ───
 const videos = [
-  { id:"pAtFdE3cBsQ", title:"Beautiful Nature Landscape — Free Stock Footage 4K", views:"Free Footage", duration:"2:30", cat:"Nature", desc:"Stunning 4K nature landscapes perfect for YouTube intros, b-roll, and creative projects." },
-  { id:"IVpIoONBSzw", title:"Cinematic City Timelapse — Free HD Stock Video", views:"Free Footage", duration:"3:15", cat:"Urban", desc:"High-quality city timelapse footage ideal for vlogs, reels, and urban content." },
-  { id:"LXb3EKWsInQ", title:"Aerial Ocean Waves — Free 4K Stock Footage", views:"Free Footage", duration:"1:55", cat:"Nature", desc:"Breathtaking aerial ocean footage. Use freely in commercial and personal projects." },
-  { id:"04854XqcfCY", title:"Golden Hour Sunset — Free Cinematic Stock Video", views:"Free Footage", duration:"2:48", cat:"Cinematic", desc:"Cinematic golden hour sunset. Perfect mood footage for storytelling and brand videos." },
-  { id:"ysz5S6PUM-U", title:"Forest & Trees — Free Nature Stock Footage 4K", views:"Free Footage", duration:"3:02", cat:"Nature", desc:"Deep forest and tree canopy footage in 4K. Great for meditation or nature channels." },
-  { id:"8Yw6oOHBqkQ", title:"Rain & Storm Ambience — Free Stock Footage", views:"Free Footage", duration:"4:10", cat:"Cinematic", desc:"Dramatic rain and storm footage with natural ambient sound. Free to use." },
-  { id:"C0DPdy98e4c", title:"Busy Street Traffic — Free Urban Stock Footage", views:"Free Footage", duration:"2:20", cat:"Urban", desc:"Urban street traffic timelapse in HD. Great for city lifestyle and travel content." },
-  { id:"ZOZOcDiQEHI", title:"Mountain Clouds Timelapse — Free 4K Footage", views:"Free Footage", duration:"1:45", cat:"Cinematic", desc:"Dramatic mountain cloudscape timelapse perfect for travel and adventure channels." },
-  { id:"dQw4w9WgXcQ", title:"How to Use AI Tools for Free — AIDesignSutra Tutorial", views:"Featured", duration:"8:24", cat:"Tutorial", desc:"Learn how to use the best free AI tools for content creation. Made for Indian creators." },
-  { id:"M7lc1UVf-VE", title:"Make Money Online with AI in 2025 — Hindi Guide", views:"Featured", duration:"12:05", cat:"Tutorial", desc:"Complete guide to building passive income using free AI tools. Perfect for beginners." },
-  { id:"YbJOTdZBX1g", title:"AI Image Generation Full Tutorial — Beginners", views:"Popular", duration:"9:45", cat:"Tutorial", desc:"Step-by-step tutorial on AI image generation using free tools like Leonardo AI & Ideogram." },
-  { id:"jNQXAC9IVRw", title:"Automate YouTube Channel with Make.com & AI", views:"New", duration:"15:30", cat:"Tutorial", desc:"Full automation walkthrough: scriptwriting, voiceover, and publishing — zero manual work." },
+  { id:"pAtFdE3cBsQ", title:"Beautiful Nature Landscape — Free Stock Footage 4K", views:"Free Footage", duration:"2:30" },
+  { id:"IVpIoONBSzw", title:"Cinematic City Timelapse — Free HD Stock Video", views:"Free Footage", duration:"3:15" },
+  { id:"LXb3EKWsInQ", title:"Aerial Ocean Waves — Free 4K Stock Footage", views:"Free Footage", duration:"1:55" },
+  { id:"04854XqcfCY", title:"Golden Hour Sunset — Free Cinematic Stock Video", views:"Free Footage", duration:"2:48" },
+  { id:"ysz5S6PUM-U", title:"Forest & Trees — Free Nature Stock Footage 4K", views:"Free Footage", duration:"3:02" },
+  { id:"8Yw6oOHBqkQ", title:"Rain & Storm Ambience — Free Stock Footage", views:"Free Footage", duration:"4:10" },
+  { id:"C0DPdy98e4c", title:"Busy Street Traffic — Free Urban Stock Footage", views:"Free Footage", duration:"2:20" },
+  { id:"ZOZOcDiQEHI", title:"Mountain Clouds Timelapse — Free 4K Footage", views:"Free Footage", duration:"1:45" },
+  { id:"oHg5SJYRHA0", title:"AI Tools for Beginners — Complete Free Guide", views:"AI Tutorials", duration:"10:12" },
+  { id:"dQw4w9WgXcQ", title:"How to Earn with AI in India — Step by Step", views:"AI Tutorials", duration:"8:45" },
+  { id:"9bZkp7q19f0", title:"Create Viral Reels with AI — Free Tools Only", views:"AI Tutorials", duration:"6:30" },
+  { id:"kJQP7kiw5Fk", title:"Best Free AI Image Generators for Indian Creators", views:"AI Tutorials", duration:"7:18" },
 ];
 
-// ─── VAST AD ROTATION ───
-const vastAds = [
-  { emoji:"🤖", title:"Try <em>Claude AI</em> Free", body:"India's #1 AI for content creators. Write blogs, scripts, captions in seconds — free to start.", cta:"Start Free →", link:"https://claude.ai" },
-  { emoji:"⚡", title:"<em>Make.com</em> — No-Code Automation", body:"Automate your content workflow. Connect 1,000+ apps without writing a single line of code.", cta:"Try Free →", link:"https://make.com" },
-  { emoji:"🎨", title:"Design with <em>Canva AI</em>", body:"Create stunning thumbnails, reels & posts in minutes. 100+ AI features. Free plan available.", cta:"Design Free →", link:"https://canva.com" },
-  { emoji:"🎙️", title:"<em>ElevenLabs</em> AI Voiceover", body:"Clone your voice or generate Hindi & English AI voiceovers instantly. Perfect for YouTube.", cta:"Try Voices →", link:"https://elevenlabs.io" },
-  { emoji:"📹", title:"Create Videos with <em>InVideo AI</em>", body:"Turn text into full YouTube videos with voiceover. 10 million creators use it — free plan available.", cta:"Make Video →", link:"https://invideo.io" },
-];
+/* ─── Video Sutra Player ─── */
+let vsCurrentId  = "";
+let vsLocalUrl   = "";
+let vsAdTimer    = null;
+let vsAdSec      = 5;
+let vsAdDone     = false;
 
-let currentVastAd = 0;
-function getNextVastAd() {
-  currentVastAd = (currentVastAd + 1) % vastAds.length;
-  return vastAds[currentVastAd];
-}
-
-// ─── VAST OVERLAY (VideoSutra featured) ───
-let vastTimer = null;
-let vastSecs = 5;
-function startVastOverlay() {
-  const ad = vastAds[Math.floor(Math.random() * vastAds.length)];
-  document.getElementById("vast-product-name").innerHTML = ad.title;
-  document.getElementById("vast-product-desc").textContent = ad.body;
-  document.getElementById("vast-cta-link").textContent = ad.cta;
-  document.getElementById("vast-cta-link").href = ad.link;
-  const overlay = document.getElementById("vast-overlay");
-  overlay.classList.remove("hidden");
-  const skipBtn = document.getElementById("vast-skip-btn");
-  const countdown = document.getElementById("vast-countdown");
-  const progress = document.getElementById("vast-progress");
-  skipBtn.style.display = "none";
-  vastSecs = 5;
-  const total = 5000;
-  const startTime = Date.now();
-  clearInterval(vastTimer);
-  vastTimer = setInterval(() => {
-    const elapsed = Date.now() - startTime;
-    const pct = Math.min((elapsed / total) * 100, 100);
-    progress.style.width = pct + "%";
-    const remaining = Math.max(0, Math.ceil((total - elapsed) / 1000));
-    if (remaining <= 3) { skipBtn.style.display = "block"; countdown.textContent = remaining > 0 ? `Skip in ${remaining}s` : "Skip now"; }
-    else { countdown.textContent = `Ad ends in ${remaining}s`; }
-    if (elapsed >= total) { clearInterval(vastTimer); skipVastOverlay(); }
-  }, 100);
-}
-function skipVastOverlay() {
-  clearInterval(vastTimer);
-  document.getElementById("vast-overlay").classList.add("hidden");
-}
-
-// ─── VAST INLINE (Player page) ───
-let vastInlineTimer = null;
-function startVastInline(onDone) {
-  const ad = getNextVastAd();
-  document.getElementById("vast-inline-title").innerHTML = ad.title;
-  document.getElementById("vast-inline-body").textContent = ad.body;
-  document.getElementById("vast-inline-link").textContent = ad.cta;
-  document.getElementById("vast-inline-link").href = ad.link;
-  document.getElementById("vast-inline-emoji").textContent = ad.emoji;
-  const box = document.getElementById("vast-inline");
-  box.classList.remove("hidden");
-  const skipBtn = document.getElementById("vast-inline-skip");
-  const timer = document.getElementById("vast-inline-timer");
-  const prog = document.getElementById("vast-inline-progress");
-  skipBtn.style.display = "none";
-  const total = 8000;
-  const startTime = Date.now();
-  clearInterval(vastInlineTimer);
-  vastInlineTimer = setInterval(() => {
-    const elapsed = Date.now() - startTime;
-    const pct = Math.min((elapsed / total) * 100, 100);
-    prog.style.width = pct + "%";
-    const remaining = Math.max(0, Math.ceil((total - elapsed) / 1000));
-    if (remaining <= 4) skipBtn.style.display = "block";
-    timer.textContent = remaining > 0 ? `Ad · ${remaining}s` : "Ad complete";
-    if (elapsed >= total) {
-      clearInterval(vastInlineTimer);
-      skipVastInline(onDone);
-    }
-  }, 100);
-  window._vastInlineDone = onDone;
-}
-function skipVastInline(cb) {
-  clearInterval(vastInlineTimer);
-  document.getElementById("vast-inline").classList.add("hidden");
-  const done = cb || window._vastInlineDone;
-  if (typeof done === "function") done();
-}
-
-// ─── VIDEO SUTRA RENDERING ───
-let activeCat = "all";
-let currentVideoId = "pAtFdE3cBsQ";
-
-function renderVsSidebar() {
-  const q = document.getElementById("vs-sidebar-queue");
-  if (!q) return;
-  q.innerHTML = videos.filter(v => v.id !== currentVideoId).slice(0, 7).map(v => `
-    <div class="vs-queue-card ${v.id === currentVideoId ? "playing" : ""}" onclick="playVsFeatured(${JSON.stringify(v)})">
-      <div class="vs-queue-thumb">
-        <img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">
-        <div class="vs-queue-dur">${v.duration}</div>
-      </div>
-      <div class="vs-queue-info">
-        <div class="vs-queue-title">${v.title}</div>
-        <div class="vs-queue-meta">📺 AIDesignSutra · ${v.cat}</div>
-      </div>
-    </div>`).join("");
-}
-
-function renderVsGrid() {
-  const g = document.getElementById("vs-video-grid");
-  if (!g) return;
-  const list = activeCat === "all" ? videos : videos.filter(v => v.cat === activeCat);
-  g.innerHTML = list.map(v => `
-    <div class="vs-vid-card" onclick="openPlayer(${JSON.stringify(v.title)}, '${v.id}', ${JSON.stringify(v.desc)}, '${v.cat}')">
-      <div class="vs-vid-thumb">
-        <img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">
-        <div class="vs-vid-overlay"><div class="vs-play-circle"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="vs-vid-dur">${v.duration}</div>
-        <div class="vs-vid-cat">${v.cat}</div>
-      </div>
-      <div class="vs-vid-title">${v.title}</div>
-      <div class="vs-vid-meta"><span>📺 AIDesignSutra</span><span>·</span><span>${v.views}</span></div>
-    </div>`).join("");
-}
-
-function playVsFeatured(v) {
-  currentVideoId = v.id;
-  document.getElementById("vs-featured-title").textContent = v.title;
-  document.getElementById("vs-featured-iframe").innerHTML = `<iframe src="https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block;position:absolute;inset:0"></iframe>`;
-  startVastOverlay();
-  renderVsSidebar();
-}
-
-// vs browse filter
-document.addEventListener("click", function(e) {
-  const btn = e.target.closest(".vs-cat-btn");
-  if (!btn) return;
-  activeCat = btn.dataset.vcat;
-  document.querySelectorAll(".vs-cat-btn").forEach(b => b.classList.toggle("active", b === btn));
-  renderVsGrid();
-});
-
-renderVsSidebar();
-renderVsGrid();
-
-// ─── PLAYER PAGE ───
-function openPlayer(title, videoId, desc, cat) {
-  const page = document.getElementById("player-page");
-  page.classList.add("open");
+function openVideoSutra(videoId, title, localUrl) {
+  vsCurrentId = videoId;
+  vsLocalUrl  = localUrl || "";
+  document.getElementById("vs-title").textContent      = title;
+  document.getElementById("vs-info-title").textContent = title;
+  document.getElementById("vs-iframe").src             = "";
+  document.getElementById("vs-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
-  document.getElementById("player-nav-title").textContent = "📺 VideoSutra — " + (cat || "");
-  document.getElementById("player-title").textContent = title;
-  document.getElementById("player-desc").textContent = desc || "Enjoy this free high-quality footage from the VideoSutra library.";
-  document.getElementById("player-views").textContent = "📺 AIDesignSutra";
-  document.getElementById("player-cat").textContent = cat || "";
-  // Render sidebar
-  const pq = document.getElementById("player-queue");
-  pq.innerHTML = videos.filter(v => v.id !== videoId).slice(0, 8).map(v => `
-    <div class="pq-card" onclick="switchPlayerVideo(${JSON.stringify(v.title)}, '${v.id}', ${JSON.stringify(v.desc)}, '${v.cat}')">
-      <div class="pq-thumb">
-        <img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">
-        <div class="pq-dur">${v.duration}</div>
+  startVAST(videoId);
+}
+
+function startVAST(videoId) {
+  vsAdDone = false;
+  vsAdSec  = 5;
+  clearInterval(vsAdTimer);
+
+  const adContainer = document.getElementById("vs-ad-container");
+  const adUI        = document.getElementById("vs-ad-ui");
+  const countdown   = document.getElementById("vs-countdown");
+  const skipBtn     = document.getElementById("vs-skip-btn");
+
+  /* Try Google IMA VAST first */
+  if (window.google && window.google.ima) {
+    adUI.style.display = "flex";
+    countdown.textContent = "Ad loading…";
+    skipBtn.style.display = "none";
+
+    const displayContainer = new google.ima.AdDisplayContainer(adContainer);
+    displayContainer.initialize();
+    const adsLoader = new google.ima.AdsLoader(displayContainer);
+
+    adsLoader.addEventListener(
+      google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+      function(e) {
+        const mgr = e.getAdsManager({ currentTime: 0, duration: -1 });
+        mgr.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, function() { finishVAST(videoId); });
+        mgr.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR,     function() { finishVAST(videoId); });
+        mgr.addEventListener(google.ima.AdEvent.Type.SKIPPABLE_STATE_CHANGED, function() {
+          if (mgr.getAdSkippableState()) {
+            skipBtn.textContent = "Skip Ad ›";
+            skipBtn.style.display = "block";
+            skipBtn.onclick = function() { mgr.skip(); };
+          }
+        });
+        try { mgr.init(640, 360, google.ima.ViewMode.NORMAL); mgr.start(); }
+        catch(err) { finishVAST(videoId); }
+      }
+    );
+    adsLoader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, function() { finishVAST(videoId); });
+
+    const req = new google.ima.AdsRequest();
+    /* Replace the tag URL below with your own VAST tag from any ad network */
+    req.adTagUrl = "https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=";
+    req.linearAdSlotWidth  = 640;
+    req.linearAdSlotHeight = 360;
+    adsLoader.requestAds(req);
+    return;
+  }
+
+  /* Fallback countdown overlay when IMA SDK is not available */
+  adContainer.style.pointerEvents = "auto";
+  adContainer.innerHTML = `
+    <div style="position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+      <div style="color:#777;font-size:11px;letter-spacing:0.12em;text-transform:uppercase">Advertisement</div>
+      <div style="width:70%;height:3px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden">
+        <div id="vs-ad-bar" style="height:100%;background:#7c6dff;width:0;transition:width 1s linear"></div>
       </div>
-      <div class="pq-info">
-        <div class="pq-title">${v.title}</div>
-        <div class="pq-meta">📺 AIDesignSutra · ${v.cat}</div>
-      </div>
-    </div>`).join("");
-  // Start VAST inline before video
-  document.getElementById("player-iframe-slot").innerHTML = "";
-  startVastInline(function() {
-    document.getElementById("player-iframe-slot").innerHTML =
-      `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block"></iframe>`;
-  });
-  page.scrollTop = 0;
+    </div>`;
+  adUI.style.display    = "flex";
+  countdown.textContent = "Ad: 5";
+  skipBtn.style.display = "none";
+
+  vsAdTimer = setInterval(function() {
+    vsAdSec--;
+    const pct = ((5 - vsAdSec) / 5 * 100).toFixed(0);
+    const bar = document.getElementById("vs-ad-bar");
+    if (bar) bar.style.width = pct + "%";
+    countdown.textContent = vsAdSec > 0 ? "Ad: " + vsAdSec : "Ad done";
+    if (vsAdSec <= 3) { skipBtn.textContent = "Skip Ad ›"; skipBtn.style.display = "block"; }
+    if (vsAdSec <= 0) finishVAST(videoId);
+  }, 1000);
 }
 
-function openPlayerRandom(toolName, cat) {
-  const catVidMap = {
-    Video: ["pAtFdE3cBsQ","IVpIoONBSzw","ysz5S6PUM-U"],
-    Writing: ["dQw4w9WgXcQ","M7lc1UVf-VE"],
-    Image: ["YbJOTdZBX1g"],
-    Automation: ["jNQXAC9IVRw"],
-    Audio: ["8Yw6oOHBqkQ"],
-    Business: ["M7lc1UVf-VE"],
-    Design: ["YbJOTdZBX1g"],
-  };
-  const pool = catVidMap[cat] || ["dQw4w9WgXcQ"];
-  const vid = pool[Math.floor(Math.random() * pool.length)];
-  const vdata = videos.find(v => v.id === vid) || videos[0];
-  openPlayer(`${toolName} — AI Tutorial on VideoSutra`, vid, `Watch the best tutorials and guides for ${toolName} on VideoSutra by AIDesignSutra.`, cat);
+function finishVAST(videoId) {
+  clearInterval(vsAdTimer);
+  vsAdDone = true;
+  document.getElementById("vs-ad-container").innerHTML = "";
+  document.getElementById("vs-ad-container").style.pointerEvents = "none";
+  document.getElementById("vs-ad-ui").style.display = "none";
+
+  if (vsLocalUrl) {
+    /* Play locally uploaded video */
+    const iframe = document.getElementById("vs-iframe");
+    iframe.style.display = "none";
+    const existing = document.getElementById("vs-local-video");
+    if (existing) existing.remove();
+    const vid = document.createElement("video");
+    vid.id = "vs-local-video";
+    vid.src = vsLocalUrl;
+    vid.controls = true;
+    vid.autoplay = true;
+    vid.style.cssText = "position:absolute;inset:0;width:100%;height:100%;background:#000;";
+    iframe.parentElement.appendChild(vid);
+  } else {
+    /* Play YouTube embed */
+    const lv = document.getElementById("vs-local-video");
+    if (lv) lv.remove();
+    document.getElementById("vs-iframe").style.display = "block";
+    document.getElementById("vs-iframe").src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+  }
 }
 
-function switchPlayerVideo(title, videoId, desc, cat) {
-  document.getElementById("player-title").textContent = title;
-  document.getElementById("player-desc").textContent = desc;
-  document.getElementById("player-cat").textContent = cat;
-  document.getElementById("player-iframe-slot").innerHTML = "";
-  startVastInline(function() {
-    document.getElementById("player-iframe-slot").innerHTML =
-      `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block"></iframe>`;
-  });
-  document.querySelectorAll(".pq-card").forEach(c => c.classList.remove("active"));
-  event.currentTarget && event.currentTarget.classList && event.currentTarget.classList.add("active");
-  document.getElementById("player-page").scrollTop = 0;
-}
+function skipVSAd() { if (!vsAdDone) finishVAST(vsCurrentId); }
 
-function closePlayer() {
-  clearInterval(vastInlineTimer);
-  document.getElementById("player-page").classList.remove("open");
+function closeVideoSutra() {
+  clearInterval(vsAdTimer);
+  document.getElementById("vs-overlay").classList.remove("open");
+  document.getElementById("vs-iframe").src = "";
+  document.getElementById("vs-iframe").style.display = "block";
+  document.getElementById("vs-ad-container").innerHTML = "";
+  document.getElementById("vs-ad-ui").style.display = "none";
+  const lv = document.getElementById("vs-local-video");
+  if (lv) lv.remove();
+  vsLocalUrl = "";
   document.body.style.overflow = "";
-  document.getElementById("player-iframe-slot").innerHTML = "";
 }
+
+function closeVSOnBackdrop(e) {
+  if (e.target === document.getElementById("vs-overlay")) closeVideoSutra();
+}
+
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeVideoSutra(); });
+
+function renderVideosGrid() {
+  const vg = document.getElementById("video-grid"); if (!vg) return;
+  vg.innerHTML = videos.map(function(v) {
+    const safeTitle = v.title.replace(/'/g,"\\'").replace(/"/g,"&quot;");
+    const thumb = v.localUrl
+      ? `<div style="position:absolute;inset:0;background:#111;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+           <span style="font-size:32px">🎬</span>
+           <span style="font-size:11px;color:#777;text-align:center;padding:0 8px">${v.title}</span>
+         </div>`
+      : `<img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">`;
+    const localArg = v.localUrl ? `,'${v.localUrl}'` : "";
+    return `
+    <div class="video-card" onclick="openVideoSutra('${v.id}','${safeTitle}'${localArg})">
+      <div class="thumbnail">
+        ${thumb}
+        <div class="video-thumb-overlay"><div class="thumb-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <span class="video-duration">${v.duration}</span>
+      </div>
+      <div class="video-info">
+        <div class="video-title">${v.title}</div>
+        <div class="video-meta">🎬 VideoSutra &nbsp;·&nbsp; ${v.views}</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+renderVideosGrid();
 </script>
 
-<script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js'); }</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
 </body>
 </html>
