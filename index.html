@@ -1040,6 +1040,9 @@ footer a:hover { color: var(--accent2); }
     </div>
   </div>
 
+  <!-- Ad unit — video section -->
+  <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="444549"></script>
+
   <!-- Video grid -->
   <div class="video-grid" id="video-grid"></div>
 </section>
@@ -1325,17 +1328,21 @@ function submitUpload() {
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeUploadModal(); });
 
 const videos = [
-  { id:"dQw4w9WgXcQ", title:"How to Use AI Tools for Free in 2025", views:"12K views", duration:"8:24" },
-  { id:"dQw4w9WgXcQ", title:"Best Free AI Image Generators for Indian Creators", views:"8.5K views", duration:"11:02" },
-  { id:"dQw4w9WgXcQ", title:"Make Money with AI — Faceless YouTube Channel Guide", views:"21K views", duration:"14:37" },
-  { id:"dQw4w9WgXcQ", title:"ElevenLabs Hindi Voiceover Tutorial — Step by Step", views:"6.2K views", duration:"6:15" },
+  { id:"pAtFdE3cBsQ", title:"Beautiful Nature Landscape — Free Stock Footage 4K", views:"Free Footage", duration:"2:30" },
+  { id:"IVpIoONBSzw", title:"Cinematic City Timelapse — Free HD Stock Video", views:"Free Footage", duration:"3:15" },
+  { id:"LXb3EKWsInQ", title:"Aerial Ocean Waves — Free 4K Stock Footage", views:"Free Footage", duration:"1:55" },
+  { id:"04854XqcfCY", title:"Golden Hour Sunset — Free Cinematic Stock Video", views:"Free Footage", duration:"2:48" },
+  { id:"ysz5S6PUM-U", title:"Forest & Trees — Free Nature Stock Footage 4K", views:"Free Footage", duration:"3:02" },
+  { id:"8Yw6oOHBqkQ", title:"Rain & Storm Ambience — Free Stock Footage", views:"Free Footage", duration:"4:10" },
+  { id:"C0DPdy98e4c", title:"Busy Street Traffic — Free Urban Stock Footage", views:"Free Footage", duration:"2:20" },
+  { id:"ZOZOcDiQEHI", title:"Mountain Clouds Timelapse — Free 4K Footage", views:"Free Footage", duration:"1:45" },
 ];
 
 function loadFeatured(el, videoId) {
   el.parentElement.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 }
 function loadCard(el, videoId) {
-  el.closest(".video-card").querySelector(".video-thumb").innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block;position:absolute;inset:0"></iframe>`;
+  el.closest(".video-card").querySelector(".thumbnail").innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block;position:absolute;inset:0"></iframe>`;
 }
 
 (function renderVideos() {
