@@ -1,876 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AIDesignSutra — Best AI tools for Indian creators, freelancers and entrepreneurs. Free & paid tools for video, image, design, writing, audio and automation.">
-<meta name="keywords" content="AIDesignSutra, AI tools for creators, free AI tools, best AI tools 2025, Indian creators AI, AI video tools, AI image tools, AI writing tools, AI audio tools">
-<meta property="og:title" content="AIDesignSutra — Best AI Tools for Indian Creators">
-<meta property="og:description" content="Discover 20+ best free & paid AI tools for Indian creators, freelancers & entrepreneurs.">
-<title>AIDesignSutra — Best AI Tools for Indian Creators</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-
-<!-- Google AdSense — Publisher ID: ca-pub-5552335746875325 -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5552335746875325" crossorigin="anonymous"></script>
-
-<!-- ============================================================
-     STEP 2: GOOGLE ANALYTICS (Free click + visitor tracking)
-     Replace G-XXXXXXXXXX with your Measurement ID
-     from: https://analytics.google.com → Admin → Data Streams
-     Then uncomment the two lines below:
-     ============================================================ -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
-<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
-
-<style>
-:root {
-  --bg: #0a0a0f;
-  --bg2: #111118;
-  --bg3: #1a1a24;
-  --surface: #16161f;
-  --surface2: #1e1e2a;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.12);
-  --text: #f0eff8;
-  --text2: #8e8da8;
-  --text3: #5a596e;
-  --accent: #7c6dff;
-  --accent2: #a78bfa;
-  --green: #22c55e;
-  --green-bg: rgba(34,197,94,0.1);
-  --amber: #f59e0b;
-  --amber-bg: rgba(245,158,11,0.1);
-  --pink: #ec4899;
-  --teal: #14b8a6;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-pill: 99px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* ── Noise texture overlay ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-/* ── Glow blob ── */
-.glow-blob {
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(124,109,255,0.12) 0%, transparent 70%);
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── NAV ── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10,10,15,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 0.5px solid var(--border);
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--text);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.nav-logo span { color: var(--accent2); }
-.nav-flag {
-  font-size: 20px;
-  line-height: 1;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-.nav-links a {
-  font-size: 13px;
-  color: var(--text2);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-.nav-cta {
-  font-size: 12px;
-  background: var(--accent);
-  color: white;
-  padding: 7px 16px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s;
-}
-.nav-cta:hover { opacity: 0.85; }
-
-/* ── HERO ── */
-.hero {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 5rem 2rem 3rem;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(124,109,255,0.15);
-  border: 0.5px solid rgba(124,109,255,0.3);
-  color: var(--accent2);
-  font-size: 12px;
-  font-weight: 500;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-.hero h1 em {
-  font-style: normal;
-  background: linear-gradient(135deg, #7c6dff 0%, #a78bfa 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero p {
-  font-size: 16px;
-  color: var(--text2);
-  max-width: 500px;
-  margin: 0 auto 2rem;
-  font-weight: 300;
-}
-
-/* ── STATS BAR ── */
-.stats-bar {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  max-width: 500px;
-  margin: 0 auto 3rem;
-  background: var(--surface);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.stat-item {
-  flex: 1;
-  padding: 1rem;
-  text-align: center;
-  border-right: 0.5px solid var(--border);
-}
-.stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-}
-.stat-num.accent { color: var(--accent2); }
-.stat-num.green { color: var(--green); }
-.stat-label {
-  font-size: 11px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 2px;
-}
-
-/* ── AD BANNER SLOT ── */
-.ad-banner {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 2rem;
-}
-.ad-slot {
-  background: var(--surface);
-  border: 0.5px dashed var(--border2);
-  border-radius: var(--radius);
-  padding: 1rem;
-  text-align: center;
-  color: var(--text3);
-  font-size: 12px;
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ad-slot-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text3);
-  margin-bottom: 4px;
-}
-
-/* ── CONTROLS ── */
-.controls {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.search-wrap {
-  position: relative;
-}
-.search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text3);
-  font-size: 16px;
-  pointer-events: none;
-}
-#search {
-  width: 100%;
-  height: 48px;
-  background: var(--surface);
-  border: 0.5px solid var(--border2);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 14px;
-  padding: 0 16px 0 42px;
-  transition: border-color 0.2s;
-  outline: none;
-}
-#search::placeholder { color: var(--text3); }
-#search:focus { border-color: rgba(124,109,255,0.5); }
-
-.filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-.filter-label {
-  font-size: 11px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-right: 4px;
-}
-.filter-btn {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  border: 0.5px solid var(--border2);
-  background: transparent;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.02em;
-}
-.filter-btn:hover { border-color: var(--border2); background: var(--surface2); color: var(--text); }
-.filter-btn.active {
-  background: rgba(124,109,255,0.2);
-  border-color: rgba(124,109,255,0.4);
-  color: var(--accent2);
-}
-
-/* ── RESULTS INFO ── */
-.results-info {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.results-count {
-  font-size: 13px;
-  color: var(--text3);
-}
-.results-count span { color: var(--text2); font-weight: 500; }
-
-/* ── GRID ── */
-.grid {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 14px;
-}
-
-/* ── CARD ── */
-.card {
-  background: var(--surface);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: border-color 0.2s, transform 0.2s, background 0.2s;
-  animation: fadeIn 0.3s ease forwards;
-  opacity: 0;
-}
-.card:hover {
-  border-color: var(--border2);
-  background: var(--surface2);
-  transform: translateY(-2px);
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.card-icon-name {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.card-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-  font-family: system-ui;
-}
-.card-name {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-}
-.free-badge {
-  font-size: 10px;
-  font-weight: 600;
-  background: var(--green-bg);
-  color: var(--green);
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-  border: 0.5px solid rgba(34,197,94,0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-.paid-badge {
-  font-size: 10px;
-  font-weight: 600;
-  background: var(--amber-bg);
-  color: var(--amber);
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-  border: 0.5px solid rgba(245,158,11,0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-.cat-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  width: fit-content;
-}
-.card-desc {
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.55;
-  font-weight: 300;
-  flex: 1;
-}
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 8px;
-  border-top: 0.5px solid var(--border);
-}
-.affiliate-tag {
-  font-size: 10px;
-  color: var(--text3);
-}
-.visit-btn {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent2);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: gap 0.2s, background 0.2s;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  border: 0.5px solid rgba(124,109,255,0.3);
-  background: transparent;
-  cursor: pointer;
-}
-.visit-btn:hover { gap: 6px; background: rgba(124,109,255,0.1); }
-.visit-btn svg { width: 12px; height: 12px; }
-
-/* ── AD SIDEBAR SLOT ── */
-.mid-ad {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto 2rem;
-  padding: 0 2rem;
-}
-
-/* ── EMPTY STATE ── */
-.empty {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text3);
-}
-.empty-icon { font-size: 40px; margin-bottom: 1rem; }
-.empty h3 { font-size: 16px; color: var(--text2); margin-bottom: 6px; }
-
-/* ── MONETIZE SECTION ── */
-.monetize {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 2rem 4rem;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-.monetize-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-}
-.monetize-card {
-  background: var(--surface);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-}
-.monetize-icon { font-size: 24px; margin-bottom: 8px; }
-.monetize-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-.monetize-card p { font-size: 12px; color: var(--text2); }
-.earning { font-size: 13px; color: var(--green); font-weight: 500; margin-top: 6px; }
-
-/* ── FOOTER ── */
-footer {
-  position: relative;
-  z-index: 1;
-  border-top: 0.5px solid var(--border);
-  padding: 2rem;
-  text-align: center;
-  color: var(--text3);
-  font-size: 12px;
-}
-footer a { color: var(--text2); text-decoration: none; }
-footer a:hover { color: var(--accent2); }
-.footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  nav { padding: 0 1rem; }
-  .nav-links { display: none; }
-  .hero { padding: 3rem 1rem 2rem; }
-  .hero h1 { font-size: 1.8rem; }
-  .controls, .grid, .results-info, .ad-banner, .mid-ad, .monetize { padding-left: 1rem; padding-right: 1rem; }
-  .grid { grid-template-columns: 1fr; }
-  .stats-bar { margin: 0 1rem 2rem; }
-}
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Description" content="AIDesignSutra — Best AI tools for Indian creators, freelancers and entrepreneurs. Free &amp; paid tools for video, image, design, writing, audio and automation.">
+  <meta name="Keywords" content="AIDesignSutra, AI tools for creators, free AI tools, best AI tools 2024, Indian creators AI">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    body {background-color: #0a0a0d}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px '.Apple Color Emoji UI'; color: #9571f8; -webkit-text-stroke: #9571f8}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #9571f8; -webkit-text-stroke: #9571f8}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #7b7997; -webkit-text-stroke: #7b7997}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #7b7997; -webkit-text-stroke: #7b7997; background-color: #6850ff}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #9571f8; -webkit-text-stroke: #9571f8}
+    p.p9 {margin: 0.0px 86.0px 24.0px 86.0px; text-align: center; text-indent: -86.0px; font: 16.0px 'Helvetica Neue'; color: #7b7997; -webkit-text-stroke: #7b7997}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 22.0px 'Helvetica Neue'; color: #9571f8; -webkit-text-stroke: #9571f8}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 22.0px 'Helvetica Neue'; color: #25bd4c; -webkit-text-stroke: #25bd4c}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 22.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b; min-height: 18.0px}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #7b7997; -webkit-text-stroke: #7b7997}
+    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px '.Apple Color Emoji UI'; color: #ecebf6; -webkit-text-stroke: #ecebf6}
+    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #25bd4c; -webkit-text-stroke: #25bd4c}
+    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #7b7997; -webkit-text-stroke: #7b7997}
+    p.p23 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #48465b; -webkit-text-stroke: #48465b}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; background-color: rgba(10, 10, 13, 0.85)}
+    span.s3 {font: 13.0px 'Helvetica Neue'; font-kerning: none; color: #7b7997; -webkit-text-stroke: 0px #7b7997}
+    span.s4 {font: 12.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: rgba(104, 80, 255, 0.15)}
+    span.s5 {font-kerning: none; background-color: rgba(104, 80, 255, 0.15)}
+    span.s6 {font-kerning: none; background-color: #111118}
+    span.s7 {font: 11.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #111118}
+    span.s8 {font-kerning: none; color: #9571f8; background-color: rgba(104, 80, 255, 0.2); -webkit-text-stroke: 0px #9571f8}
+    span.s9 {font: 15.0px 'Helvetica Neue'; font-kerning: none; color: #ecebf6; -webkit-text-stroke: 0px #ecebf6}
+    span.s10 {font: 12.0px '.Apple Color Emoji UI'; font-kerning: none}
+    span.s11 {font-kerning: none; color: #7b7997; -webkit-text-stroke: 0px #7b7997}
+    span.s12 {font: 18.0px '.Apple Color Emoji UI'; font-kerning: none}
+    span.s13 {font: 12.0px 'Helvetica Neue'; font-kerning: none; color: #7b7997; -webkit-text-stroke: 0px #7b7997}
+  </style>
 </head>
 <body>
-
-<div class="glow-blob"></div>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">
-    <span class="nav-flag">🇮🇳</span>
-    AI<span>DesignSutra</span>
-  </a>
-  <div class="nav-links">
-    <a href="#tools">Tools</a>
-    <a href="#monetize">Earn Money</a>
-    <a href="https://claude.ai" target="_blank" rel="noopener">Submit a Tool</a>
-    <a href="https://claude.ai" target="_blank" rel="noopener" class="nav-cta">Get Started Free →</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">🚀 40+ Tools — Updated June 2025</div>
-  <h1>Best <em>AI Tools</em> for Creators</h1>
-  <p>Discover free & paid AI tools for video, design, writing, audio & more. Curated for creators, freelancers & entrepreneurs by AIDesignSutra.</p>
-</section>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num accent" id="total-count">40</div>
-    <div class="stat-label">Total Tools</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num green" id="free-count">32</div>
-    <div class="stat-label">Free Plans</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num" id="shown-count">20</div>
-    <div class="stat-label">Showing</div>
-  </div>
-</div>
-
-<!-- TOP AD BANNER -->
-<div class="ad-banner">
-  <div class="ad-slot">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5552335746875325"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-<div class="controls" id="tools">
-  <div class="search-wrap">
-    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search" placeholder="Search AI tools... (e.g. video, free, Hindi)">
-  </div>
-  <div class="filter-row">
-    <span class="filter-label">Filter:</span>
-    <div id="filters">
-      <button class="filter-btn active" data-cat="all">All</button>
-      <button class="filter-btn" data-cat="Video">📹 Video</button>
-      <button class="filter-btn" data-cat="Image">🎨 Image</button>
-      <button class="filter-btn" data-cat="Writing">✍️ Writing</button>
-      <button class="filter-btn" data-cat="Audio">🎵 Audio</button>
-      <button class="filter-btn" data-cat="Automation">⚡ Automation</button>
-      <button class="filter-btn" data-cat="Design">🖌️ Design</button>
-      <button class="filter-btn" data-cat="Business">💼 Business</button>
-    </div>
-  </div>
-</div>
-
-<!-- RESULTS INFO -->
-<div class="results-info">
-  <div class="results-count" id="result-text">Showing <span>20</span> tools</div>
-</div>
-
-<!-- GRID -->
-<div class="grid" id="grid"></div>
-
-<!-- MID AD -->
-<div class="mid-ad">
-  <div class="ad-slot">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5552335746875325"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-</div>
-
-<!-- EARN MONEY SECTION -->
-<div class="monetize" id="monetize">
-  <div class="section-title">💰 How to Earn with AI Tools</div>
-  <div class="monetize-grid">
-    <div class="monetize-card">
-      <div class="monetize-icon">📺</div>
-      <h3>Faceless YouTube Channel</h3>
-      <p>Use AI video tools to create content without showing your face. Earn from ads.</p>
-      <div class="earning">₹5,000–50,000/month</div>
-    </div>
-    <div class="monetize-card">
-      <div class="monetize-icon">🎨</div>
-      <h3>Print-on-Demand</h3>
-      <p>Generate AI art with Leonardo or Midjourney, sell on Redbubble & Merch by Amazon.</p>
-      <div class="earning">₹3,000–30,000/month</div>
-    </div>
-    <div class="monetize-card">
-      <div class="monetize-icon">🤝</div>
-      <h3>Affiliate Marketing</h3>
-      <p>Recommend AI tools from this directory. Earn commission on every signup.</p>
-      <div class="earning">₹2,000–20,000/month</div>
-    </div>
-    <div class="monetize-card">
-      <div class="monetize-icon">📝</div>
-      <h3>Freelance AI Services</h3>
-      <p>Offer AI content writing, voiceover, or design services on Fiverr & Upwork.</p>
-      <div class="earning">₹10,000–1,00,000/month</div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-links">
-    <a href="#">Home</a>
-    <a href="#tools">All Tools</a>
-    <a href="#monetize">Earn Money</a>
-    <a href="mailto:your@email.com">Contact</a>
-    <a href="#">Privacy Policy</a>
-  </div>
-  <p>© 2025 AIDesignSutra · Made with ❤️ for Indian Creators · All affiliate links help support this free directory</p>
-</footer>
-
-<script>
-const tools = [
-  { name:"Claude", cat:"Writing", icon:"🤖", desc:"Best AI for writing, content creation & brainstorming. Trusted by millions worldwide.", free:true, affiliate:true, link:"https://claude.ai" },
-  { name:"ChatGPT", cat:"Writing", icon:"💬", desc:"Popular AI assistant for content, ideas, emails and creative writing tasks.", free:true, affiliate:false, link:"https://chat.openai.com" },
-  { name:"Canva AI", cat:"Design", icon:"🎨", desc:"AI-powered design platform. Create posts, reels, thumbnails & presentations easily.", free:true, affiliate:true, link:"https://www.canva.com/join/your-referral-code" },
-  { name:"ElevenLabs", cat:"Audio", icon:"🎙️", desc:"Clone your voice or generate AI voiceovers in Hindi & English for any content.", free:true, affiliate:true, link:"https://elevenlabs.io" },
-  { name:"Runway ML", cat:"Video", icon:"🎬", desc:"Generate & edit videos with AI. Perfect for faceless YouTube channels & reels.", free:false, affiliate:true, link:"https://runwayml.com" },
-  { name:"InVideo AI", cat:"Video", icon:"📹", desc:"Turn text prompts into full videos with voiceover. Great for YouTube creators.", free:true, affiliate:true, link:"https://invideo.io" },
-  { name:"Midjourney", cat:"Image", icon:"🖼️", desc:"Create stunning AI images from text. Best quality image generator for creators.", free:false, affiliate:false, link:"https://midjourney.com" },
-  { name:"Leonardo AI", cat:"Image", icon:"🎭", desc:"Free AI image generator with daily credits. Perfect for thumbnails, art & POD.", free:true, affiliate:false, link:"https://leonardo.ai" },
-  { name:"Make.com", cat:"Automation", icon:"⚡", desc:"Automate workflows without code. Connect apps & build powerful AI pipelines.", free:true, affiliate:true, link:"https://make.com" },
-  { name:"Notion AI", cat:"Writing", icon:"📓", desc:"AI inside Notion for writing, summarising & organising all your content.", free:false, affiliate:false, link:"https://notion.so" },
-  { name:"Descript", cat:"Video", icon:"✂️", desc:"Edit videos by editing text. Remove filler words & silences with one click.", free:true, affiliate:false, link:"https://descript.com" },
-  { name:"Suno AI", cat:"Audio", icon:"🎵", desc:"Generate complete songs with lyrics from a simple text prompt. Fully free.", free:true, affiliate:false, link:"https://suno.com" },
-  { name:"Pictory", cat:"Video", icon:"📺", desc:"Turn blog posts & scripts into short videos with AI automatically.", free:false, affiliate:true, link:"https://pictory.ai" },
-  { name:"Adobe Firefly", cat:"Image", icon:"🔥", desc:"AI image generation by Adobe. Commercial-safe with free monthly credits.", free:true, affiliate:false, link:"https://firefly.adobe.com" },
-  { name:"Perplexity AI", cat:"Writing", icon:"🔍", desc:"AI search engine with verified citations. Best for research & fact-checking.", free:true, affiliate:false, link:"https://perplexity.ai" },
-  { name:"HeyGen", cat:"Video", icon:"🧑‍💻", desc:"Create AI avatar videos. Translate your videos to Hindi & regional languages.", free:true, affiliate:true, link:"https://heygen.com" },
-  { name:"Pika Labs", cat:"Video", icon:"✨", desc:"Text to video AI. Create short cinematic clips from simple text prompts.", free:true, affiliate:false, link:"https://pika.art" },
-  { name:"Lovable.dev", cat:"Business", icon:"💻", desc:"Build full websites & web apps from a text prompt. Zero coding required.", free:true, affiliate:false, link:"https://lovable.dev" },
-  { name:"Bolt.new", cat:"Business", icon:"⚡", desc:"Instant web app builder from prompt. Best for MVPs, SaaS & landing pages.", free:true, affiliate:false, link:"https://bolt.new" },
-  { name:"FlutterFlow", cat:"Business", icon:"📱", desc:"Build mobile apps with AI assistance. Export code or publish to Play Store.", free:true, affiliate:true, link:"https://flutterflow.io" },
-
-  // ── 20 NEW TOOLS ──
-  { name:"Kling AI", cat:"Video", icon:"🎥", desc:"Create stunning AI videos from text or image. Best free alternative to Sora for Indian creators.", free:true, affiliate:false, link:"https://klingai.com" },
-  { name:"CapCut AI", cat:"Video", icon:"✂️", desc:"Free AI video editor with auto-captions, background remover & trending templates. Popular in India.", free:true, affiliate:false, link:"https://capcut.com" },
-  { name:"Lumen5", cat:"Video", icon:"📽️", desc:"Convert blog posts into engaging social media videos automatically using AI.", free:true, affiliate:true, link:"https://lumen5.com" },
-  { name:"Ideogram AI", cat:"Image", icon:"🖋️", desc:"Best AI image tool for adding text to images. Perfect for posters, thumbnails & quotes.", free:true, affiliate:false, link:"https://ideogram.ai" },
-  { name:"Stable Diffusion", cat:"Image", icon:"🌊", desc:"Free open-source AI image generator. Run locally or use free online tools. No limits.", free:true, affiliate:false, link:"https://stablediffusionweb.com" },
-  { name:"Clipdrop", cat:"Image", icon:"✂️", desc:"Remove backgrounds, upscale images & relight photos instantly with AI. Free tier available.", free:true, affiliate:false, link:"https://clipdrop.co" },
-  { name:"Udio", cat:"Audio", icon:"🎼", desc:"Generate full high-quality songs with vocals and instruments from text prompts. Completely free.", free:true, affiliate:false, link:"https://udio.com" },
-  { name:"Adobe Podcast", cat:"Audio", icon:"🎙️", desc:"AI audio enhancer that removes background noise and improves voice quality instantly.", free:true, affiliate:false, link:"https://podcast.adobe.com" },
-  { name:"Murf AI", cat:"Audio", icon:"🔊", desc:"Professional AI voiceover tool with Hindi voices. Perfect for YouTube and eLearning creators.", free:true, affiliate:true, link:"https://murf.ai" },
-  { name:"Gemini", cat:"Writing", icon:"♊", desc:"Google's powerful AI assistant. Great for research, writing and understanding Indian context.", free:true, affiliate:false, link:"https://gemini.google.com" },
-  { name:"Copy.ai", cat:"Writing", icon:"📋", desc:"AI copywriting tool for ads, emails, social posts and product descriptions in seconds.", free:true, affiliate:true, link:"https://copy.ai" },
-  { name:"Writesonic", cat:"Writing", icon:"✍️", desc:"AI writer for blogs, ads and SEO content. Has Hindi language support for Indian creators.", free:true, affiliate:true, link:"https://writesonic.com" },
-  { name:"Tome", cat:"Design", icon:"📖", desc:"AI-powered presentation maker. Creates beautiful slide decks from a single text prompt.", free:true, affiliate:false, link:"https://tome.app" },
-  { name:"Gamma.app", cat:"Design", icon:"γ", desc:"Build stunning presentations, documents and webpages with AI in minutes. No design skills needed.", free:true, affiliate:false, link:"https://gamma.app" },
-  { name:"Looka", cat:"Design", icon:"🏷️", desc:"AI logo maker for startups and creators. Get a professional logo and brand kit in minutes.", free:false, affiliate:true, link:"https://looka.com" },
-  { name:"Zapier AI", cat:"Automation", icon:"🔗", desc:"Connect 6000+ apps and automate tasks with AI. No coding needed. Great for Indian freelancers.", free:true, affiliate:true, link:"https://zapier.com" },
-  { name:"n8n", cat:"Automation", icon:"🔄", desc:"Open-source automation tool like Make.com. Self-host for free or use cloud version for workflows.", free:true, affiliate:false, link:"https://n8n.io" },
-  { name:"Notion AI", cat:"Business", icon:"📓", desc:"AI inside Notion for writing, summarising and organising all your business content.", free:false, affiliate:false, link:"https://notion.so" },
-  { name:"Durable", cat:"Business", icon:"🏗️", desc:"Build a complete business website with AI in 30 seconds. Includes content, images and SEO.", free:true, affiliate:true, link:"https://durable.co" },
-  { name:"Synthesia", cat:"Video", icon:"🧑‍🎤", desc:"Create professional AI avatar videos in Hindi and English without a camera or studio.", free:false, affiliate:true, link:"https://synthesia.io" },
-];
-
-const catColors = {
-  Video:   { bg:"rgba(59,130,246,0.12)", text:"#60a5fa", dot:"#3b82f6" },
-  Image:   { bg:"rgba(124,109,255,0.12)", text:"#a78bfa", dot:"#7c6dff" },
-  Writing: { bg:"rgba(34,197,94,0.12)",  text:"#4ade80", dot:"#22c55e" },
-  Audio:   { bg:"rgba(236,72,153,0.12)", text:"#f472b6", dot:"#ec4899" },
-  Automation:{ bg:"rgba(245,158,11,0.12)",text:"#fbbf24", dot:"#f59e0b" },
-  Design:  { bg:"rgba(20,184,166,0.12)", text:"#2dd4bf", dot:"#14b8a6" },
-  Business:{ bg:"rgba(251,146,60,0.12)", text:"#fb923c", dot:"#f97316" },
-};
-
-let activeFilter = "all";
-let searchVal = "";
-
-function render() {
-  const grid = document.getElementById("grid");
-  const filtered = tools.filter(t => {
-    const matchCat = activeFilter === "all" || t.cat === activeFilter;
-    const q = searchVal.toLowerCase();
-    const matchSearch = !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q);
-    return matchCat && matchSearch;
-  });
-
-  document.getElementById("shown-count").textContent = filtered.length;
-  document.getElementById("result-text").innerHTML = `Showing <span>${filtered.length}</span> tool${filtered.length !== 1 ? "s" : ""}`;
-
-  if (!filtered.length) {
-    grid.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><h3>No tools found</h3><p>Try a different search or filter</p></div>`;
-    return;
-  }
-
-  grid.innerHTML = filtered.map((t, i) => {
-    const cc = catColors[t.cat] || { bg:"rgba(255,255,255,0.08)", text:"#aaa", dot:"#888" };
-    return `
-    <div class="card" style="animation-delay:${i * 0.04}s">
-      <div class="card-header">
-        <div class="card-icon-name">
-          <div class="card-icon" style="background:${cc.bg}; font-size:20px">${t.icon}</div>
-          <div class="card-name">${t.name}</div>
-        </div>
-        ${t.free
-          ? '<span class="free-badge">Free</span>'
-          : '<span class="paid-badge">Paid</span>'}
-      </div>
-      <div class="cat-pill" style="background:${cc.bg}; color:${cc.text}">
-        <span style="width:6px;height:6px;border-radius:50%;background:${cc.dot};display:inline-block"></span>
-        ${t.cat}
-      </div>
-      <div class="card-desc">${t.desc}</div>
-      <div class="card-footer">
-        <span class="affiliate-tag">${t.affiliate ? "💰 Earn commission" : ""}</span>
-        <button class="visit-btn" onclick="trackClick('${t.name.replace(/'/g,"\\'")}','${t.link}',${t.affiliate})" title="Visit ${t.name}">
-          Visit
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </button>
-      </div>
-    </div>`;
-  }).join("");
-}
-
-// ============================================================
-// AFFILIATE LINK TRACKING
-// How it works:
-//   - Every tool card "Visit" button goes through trackClick()
-//   - Logs click to console (visible in browser DevTools)
-//   - Fires Google Analytics event (works once GA is set up)
-//   - You can also connect to any analytics platform here
-// ============================================================
-
-// Replace affiliate links here — add YOUR referral URLs per tool
-// Get affiliate links from each platform's affiliate/partner program
-const affiliateLinks = {
-  "Claude":       "https://claude.ai",
-  "Canva AI":     "https://www.canva.com/join/YOUR-CODE",
-  "ElevenLabs":   "https://elevenlabs.io/?from=YOUR-CODE",
-  "Runway ML":    "https://runwayml.com/?via=YOUR-CODE",
-  "InVideo AI":   "https://invideo.io/?ref=YOUR-CODE",
-  "Make.com":     "https://www.make.com/en/register?pc=YOUR-CODE",
-  "Pictory":      "https://pictory.ai/?ref=YOUR-CODE",
-  "HeyGen":       "https://app.heygen.com/guest/home?sid=YOUR-CODE",
-  "FlutterFlow":  "https://flutterflow.io/?ref=YOUR-CODE",
-  "Lumen5":       "https://lumen5.com/?ref=YOUR-CODE",
-  "Murf AI":      "https://murf.ai/?ref=YOUR-CODE",
-  "Copy.ai":      "https://copy.ai/?via=YOUR-CODE",
-  "Writesonic":   "https://writesonic.com/?via=YOUR-CODE",
-  "Looka":        "https://looka.com/?ref=YOUR-CODE",
-  "Zapier AI":    "https://zapier.com/?ref=YOUR-CODE",
-  "Durable":      "https://durable.co/?ref=YOUR-CODE",
-  "Synthesia":    "https://synthesia.io/?ref=YOUR-CODE",
-};
-
-// Click tracker — fires on every tool Visit button click
-function trackClick(toolName, toolUrl, isAffiliate) {
-  // 1. Resolve affiliate URL if available
-  const finalUrl = affiliateLinks[toolName] || toolUrl;
-
-  // 2. Log to console (always works, good for debugging)
-  console.log(`[AIDesignSutra] Click: ${toolName} | Affiliate: ${isAffiliate} | URL: ${finalUrl}`);
-
-  // 3. Fire Google Analytics event (works after GA is set up)
-  if (typeof gtag !== "undefined") {
-    gtag("event", "tool_click", {
-      event_category: isAffiliate ? "affiliate" : "regular",
-      event_label: toolName,
-      value: 1
-    });
-  }
-
-  // 4. Store click count in localStorage for your own dashboard
-  const key = "clicks_" + toolName.replace(/\s+/g, "_");
-  const prev = parseInt(localStorage.getItem(key) || "0");
-  localStorage.setItem(key, prev + 1);
-
-  // 5. Open the link
-  window.open(finalUrl, "_blank", "noopener");
-}
-
-// Show total click summary in console (open DevTools → Console to see)
-function showClickStats() {
-  console.log("=== AIDesignSutra — Affiliate Click Stats ===");
-  tools.filter(t => t.affiliate).forEach(t => {
-    const key = "clicks_" + t.name.replace(/\s+/g, "_");
-    const count = localStorage.getItem(key) || "0";
-    console.log(`  ${t.name}: ${count} clicks`);
-  });
-}
-// Run stats on load
-showClickStats();
-
-document.getElementById("search").addEventListener("input", e => {
-  searchVal = e.target.value;
-  render();
-});
-
-document.getElementById("filters").addEventListener("click", e => {
-  const btn = e.target.closest(".filter-btn");
-  if (!btn) return;
-  activeFilter = btn.dataset.cat;
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.toggle("active", b === btn));
-  render();
-});
-
-render();
-</script>
+<p class="p1"><span class="s1">google.com, pub-5552335746875325, DIRECT, f08c47fec0942fa0</span></p>
+<p class="p2"><span class="s2">🇮🇳</span></p>
+<p class="p3"><span class="s2">AI</span></p>
+<p class="p4"><span class="s2">DesignSutra</span></p>
+<p class="p5"><span class="s2">Tools</span></p>
+<p class="p5"><span class="s2">Earn Money</span></p>
+<p class="p5"><span class="s2"><a href="https://claude.ai/">Submit a Tool<span class="s3"></span></a></span></p>
+<p class="p6"><span class="s1"><a href="https://claude.ai/">Get Started Free →<span class="s3"></span></a></span></p>
+<p class="p7"><span class="s4">🚀</span><span class="s5"> UPDATED JUNE 2025</span></p>
+<h1 style="margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 38.4px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6"><span class="s1">Best AI Tools for Creators</span></h1>
+<p class="p9"><span class="s1">Discover free &amp; paid AI tools for video, design, writing, audio &amp; more. Curated for creators, freelancers &amp; entrepreneurs by AIDesignSutra.</span></p>
+<p class="p10"><span class="s6">20</span></p>
+<p class="p11"><span class="s6">TOTAL TOOLS</span></p>
+<p class="p12"><span class="s6">14</span></p>
+<p class="p11"><span class="s6">FREE PLANS</span></p>
+<p class="p13"><span class="s6">20</span></p>
+<p class="p11"><span class="s6">SHOWING</span></p>
+<p class="p14"><span class="s6">ADVERTISEMENT — GOOGLE ADSENSE (TOP BANNER)</span></p>
+<p class="p11"><span class="s7">👉</span><span class="s6"> After AdSense approval, replace this placeholder with your &lt;ins&gt; tag</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p16"><span class="s1">FILTER:</span></p>
+<p class="p17"><span class="s8">All</span><span class="s9"> </span><span class="s10">📹</span><span class="s1"> Video</span><span class="s9"> </span><span class="s10">🎨</span><span class="s1"> Image</span><span class="s9"> </span><span class="s10">✍️</span><span class="s1"> Writing</span><span class="s9"> </span><span class="s10">🎵</span><span class="s1"> Audio</span><span class="s9"> </span><span class="s10">⚡</span><span class="s1"> Automation</span><span class="s9"> </span><span class="s10">🖌️</span><span class="s1"> Design</span><span class="s9"> </span><span class="s10">💼</span><span class="s1"> Business</span></p>
+<p class="p18"><span class="s1">Showing </span><span class="s11">20</span><span class="s1"> tools</span></p>
+<p class="p14"><span class="s6">ADVERTISEMENT — GOOGLE ADSENSE (MID BANNER)</span></p>
+<p class="p11"><span class="s7">👉</span><span class="s6"> After AdSense approval, replace this placeholder with your &lt;ins&gt; tag</span></p>
+<p class="p3"><span class="s12">💰</span><span class="s1"> How to Earn with AI Tools</span></p>
+<p class="p19"><span class="s6">📺</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6"><span class="s6">Faceless YouTube Channel</span></h3>
+<p class="p17"><span class="s6">Use AI video tools to create content without showing your face. Earn from ads.</span></p>
+<p class="p21"><span class="s6">₹5,000–50,000/month</span></p>
+<p class="p19"><span class="s6">🎨</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6"><span class="s6">Print-on-Demand</span></h3>
+<p class="p17"><span class="s6">Generate AI art with Leonardo or Midjourney, sell on Redbubble &amp; Merch by Amazon.</span></p>
+<p class="p21"><span class="s6">₹3,000–30,000/month</span></p>
+<p class="p19"><span class="s6">🤝</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6"><span class="s6">Affiliate Marketing</span></h3>
+<p class="p17"><span class="s6">Recommend AI tools from this directory. Earn commission on every signup.</span></p>
+<p class="p21"><span class="s6">₹2,000–20,000/month</span></p>
+<p class="p19"><span class="s6">📝</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #ecebf6; -webkit-text-stroke: #ecebf6"><span class="s6">Freelance AI Services</span></h3>
+<p class="p17"><span class="s6">Offer AI content writing, voiceover, or design services on Fiverr &amp; Upwork.</span></p>
+<p class="p21"><span class="s6">₹10,000–1,00,000/month</span></p>
+<p class="p22"><span class="s1">Home</span></p>
+<p class="p22"><span class="s1">All Tools</span></p>
+<p class="p22"><span class="s1">Earn Money</span></p>
+<p class="p22"><span class="s1"><a href="mailto:your@email.com">Contact<span class="s13"></span></a></span></p>
+<p class="p22"><span class="s1">Privacy Policy</span></p>
+<p class="p23"><span class="s1">© 2025 AIDesignSutra · Made with </span><span class="s10">❤️</span><span class="s1"> for Indian Creators · All affiliate links help support this free directory</span></p>
 </body>
 </html>
