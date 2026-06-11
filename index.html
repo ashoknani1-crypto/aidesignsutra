@@ -16,7 +16,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5552335746875325" crossorigin="anonymous"></script>
 
 <!-- ============================================================
-     STEP 2: GOOGLE ANALYTICS (Free click + visitor tracking)
+     GOOGLE ANALYTICS (Free click + visitor tracking)
      Replace G-XXXXXXXXXX with your Measurement ID
      from: https://analytics.google.com → Admin → Data Streams
      Then uncomment the two lines below:
@@ -796,33 +796,29 @@ nav {
 }
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px;
 }
 .video-card {
-  background: var(--surface);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.video-card:hover { border-color: var(--border2); transform: translateY(-2px); }
-.video-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: var(--bg3);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-size: 28px;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
 }
-.video-thumb img {
+.video-card:hover .thumbnail img { transform: scale(1.05); }
+.thumbnail {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  position: relative;
+}
+.thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
   display: block;
 }
 .video-thumb-overlay {
@@ -834,6 +830,7 @@ nav {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.2s;
+  border-radius: 12px;
 }
 .video-card:hover .video-thumb-overlay { opacity: 1; }
 .thumb-play {
@@ -846,13 +843,13 @@ nav {
   justify-content: center;
 }
 .thumb-play svg { width: 16px; height: 16px; fill: white; margin-left: 2px; }
-.video-info { padding: 10px 12px; }
+.video-info { padding: 4px 0; }
 .video-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
   line-height: 1.4;
-  margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -901,6 +898,7 @@ footer a:hover { color: var(--accent2); }
   .grid { grid-template-columns: 1fr; }
   .stats-bar { margin: 0 1rem 2rem; }
 }
+
 </style>
 </head>
 <body>
@@ -955,7 +953,7 @@ footer a:hover { color: var(--accent2); }
 
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-client="ca-pub-5552335746875325"
            data-ad-slot="1111111111"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
@@ -966,6 +964,9 @@ footer a:hover { color: var(--accent2); }
       <span style="font-size:11px">👉 After AdSense approval, replace this placeholder with your &lt;ins&gt; tag</span>
     </div>
   </div>
+</div>
+
+<!-- CONTROLS -->
 <div class="controls" id="tools">
   <div class="search-wrap">
     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -1003,7 +1004,7 @@ footer a:hover { color: var(--accent2); }
 
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-client="ca-pub-5552335746875325"
            data-ad-slot="2222222222"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
@@ -1211,13 +1212,13 @@ const tools = [
 ];
 
 const catColors = {
-  Video:   { bg:"rgba(59,130,246,0.12)", text:"#60a5fa", dot:"#3b82f6" },
-  Image:   { bg:"rgba(124,109,255,0.12)", text:"#a78bfa", dot:"#7c6dff" },
-  Writing: { bg:"rgba(34,197,94,0.12)",  text:"#4ade80", dot:"#22c55e" },
-  Audio:   { bg:"rgba(236,72,153,0.12)", text:"#f472b6", dot:"#ec4899" },
-  Automation:{ bg:"rgba(245,158,11,0.12)",text:"#fbbf24", dot:"#f59e0b" },
-  Design:  { bg:"rgba(20,184,166,0.12)", text:"#2dd4bf", dot:"#14b8a6" },
-  Business:{ bg:"rgba(251,146,60,0.12)", text:"#fb923c", dot:"#f97316" },
+  Video:      { bg:"rgba(59,130,246,0.12)",  text:"#60a5fa", dot:"#3b82f6" },
+  Image:      { bg:"rgba(124,109,255,0.12)", text:"#a78bfa", dot:"#7c6dff" },
+  Writing:    { bg:"rgba(34,197,94,0.12)",   text:"#4ade80", dot:"#22c55e" },
+  Audio:      { bg:"rgba(236,72,153,0.12)",  text:"#f472b6", dot:"#ec4899" },
+  Automation: { bg:"rgba(245,158,11,0.12)",  text:"#fbbf24", dot:"#f59e0b" },
+  Design:     { bg:"rgba(20,184,166,0.12)",  text:"#2dd4bf", dot:"#14b8a6" },
+  Business:   { bg:"rgba(251,146,60,0.12)",  text:"#fb923c", dot:"#f97316" },
 };
 
 let activeFilter = "all";
@@ -1249,9 +1250,7 @@ function render() {
           <div class="card-icon" style="background:${cc.bg}; font-size:20px">${t.icon}</div>
           <div class="card-name">${t.name}</div>
         </div>
-        ${t.free
-          ? '<span class="free-badge">Free</span>'
-          : '<span class="paid-badge">Paid</span>'}
+        ${t.free ? '<span class="free-badge">Free</span>' : '<span class="paid-badge">Paid</span>'}
       </div>
       <div class="cat-pill" style="background:${cc.bg}; color:${cc.text}">
         <span style="width:6px;height:6px;border-radius:50%;background:${cc.dot};display:inline-block"></span>
@@ -1269,72 +1268,30 @@ function render() {
   }).join("");
 }
 
-// ============================================================
-// AFFILIATE LINK TRACKING
-// How it works:
-//   - Every tool card "Visit" button goes through trackClick()
-//   - Logs click to console (visible in browser DevTools)
-//   - Fires Google Analytics event (works once GA is set up)
-//   - You can also connect to any analytics platform here
-// ============================================================
-
-// Replace affiliate links here — add YOUR referral URLs per tool
-// Get affiliate links from each platform's affiliate/partner program
 const affiliateLinks = {
-  "Claude":       "https://claude.ai",                          // No affiliate program yet
-  "Canva AI":     "https://www.canva.com/join/YOUR-CODE",       // canva.com/affiliates
-  "ElevenLabs":   "https://elevenlabs.io/?from=YOUR-CODE",      // elevenlabs.io affiliate
-  "Runway ML":    "https://runwayml.com/?via=YOUR-CODE",        // runwayml.com/affiliates
-  "InVideo AI":   "https://invideo.io/?ref=YOUR-CODE",          // invideo.io affiliate
-  "Make.com":     "https://www.make.com/en/register?pc=YOUR-CODE", // make.com partner
-  "Pictory":      "https://pictory.ai/?ref=YOUR-CODE",          // pictory.ai affiliate
-  "HeyGen":       "https://app.heygen.com/guest/home?sid=YOUR-CODE", // heygen affiliate
-  "FlutterFlow":  "https://flutterflow.io/?ref=YOUR-CODE",      // flutterflow affiliate
+  "Claude":      "https://claude.ai",
+  "Canva AI":    "https://www.canva.com/join/YOUR-CODE",
+  "ElevenLabs":  "https://elevenlabs.io/?from=YOUR-CODE",
+  "Runway ML":   "https://runwayml.com/?via=YOUR-CODE",
+  "InVideo AI":  "https://invideo.io/?ref=YOUR-CODE",
+  "Make.com":    "https://www.make.com/en/register?pc=YOUR-CODE",
+  "Pictory":     "https://pictory.ai/?ref=YOUR-CODE",
+  "HeyGen":      "https://app.heygen.com/guest/home?sid=YOUR-CODE",
+  "FlutterFlow": "https://flutterflow.io/?ref=YOUR-CODE",
 };
 
-// Click tracker — fires on every tool Visit button click
 function trackClick(toolName, toolUrl, isAffiliate) {
-  // 1. Resolve affiliate URL if available
   const finalUrl = affiliateLinks[toolName] || toolUrl;
-
-  // 2. Log to console (always works, good for debugging)
   console.log(`[AIDesignSutra] Click: ${toolName} | Affiliate: ${isAffiliate} | URL: ${finalUrl}`);
-
-  // 3. Fire Google Analytics event (works after GA is set up)
   if (typeof gtag !== "undefined") {
-    gtag("event", "tool_click", {
-      event_category: isAffiliate ? "affiliate" : "regular",
-      event_label: toolName,
-      value: 1
-    });
+    gtag("event", "tool_click", { event_category: isAffiliate ? "affiliate" : "regular", event_label: toolName, value: 1 });
   }
-
-  // 4. Store click count in localStorage for your own dashboard
   const key = "clicks_" + toolName.replace(/\s+/g, "_");
-  const prev = parseInt(localStorage.getItem(key) || "0");
-  localStorage.setItem(key, prev + 1);
-
-  // 5. Open the link
+  localStorage.setItem(key, (parseInt(localStorage.getItem(key) || "0")) + 1);
   window.open(finalUrl, "_blank", "noopener");
 }
 
-// Show total click summary in console (open DevTools → Console to see)
-function showClickStats() {
-  console.log("=== AIDesignSutra — Affiliate Click Stats ===");
-  tools.filter(t => t.affiliate).forEach(t => {
-    const key = "clicks_" + t.name.replace(/\s+/g, "_");
-    const count = localStorage.getItem(key) || "0";
-    console.log(`  ${t.name}: ${count} clicks`);
-  });
-}
-// Run stats on load
-showClickStats();
-
-document.getElementById("search").addEventListener("input", e => {
-  searchVal = e.target.value;
-  render();
-});
-
+document.getElementById("search").addEventListener("input", e => { searchVal = e.target.value; render(); });
 document.getElementById("filters").addEventListener("click", e => {
   const btn = e.target.closest(".filter-btn");
   if (!btn) return;
@@ -1345,44 +1302,25 @@ document.getElementById("filters").addEventListener("click", e => {
 
 render();
 
-function openUploadModal() {
-  document.getElementById("upload-modal").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-function closeUploadModal() {
-  document.getElementById("upload-modal").classList.remove("open");
-  document.body.style.overflow = "";
-}
-function closeOnBackdrop(e) {
-  if (e.target === document.getElementById("upload-modal")) closeUploadModal();
-}
+function openUploadModal() { document.getElementById("upload-modal").classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeUploadModal() { document.getElementById("upload-modal").classList.remove("open"); document.body.style.overflow = ""; }
+function closeOnBackdrop(e) { if (e.target === document.getElementById("upload-modal")) closeUploadModal(); }
 function handleFile(input) {
-  const file = input.files[0];
-  if (!file) return;
-  const el = document.getElementById("file-name");
-  el.textContent = "✅ " + file.name;
-  el.style.display = "block";
+  const file = input.files[0]; if (!file) return;
+  const el = document.getElementById("file-name"); el.textContent = "✅ " + file.name; el.style.display = "block";
 }
 function handleDrop(e) {
-  e.preventDefault();
-  document.getElementById("drop-zone").classList.remove("drag-over");
+  e.preventDefault(); document.getElementById("drop-zone").classList.remove("drag-over");
   const file = e.dataTransfer.files[0];
   if (file && file.type.startsWith("video/")) {
-    const dt = new DataTransfer();
-    dt.items.add(file);
-    const input = document.getElementById("file-input");
-    input.files = dt.files;
-    handleFile(input);
+    const dt = new DataTransfer(); dt.items.add(file);
+    const input = document.getElementById("file-input"); input.files = dt.files; handleFile(input);
   }
 }
 function submitUpload() {
   document.getElementById("modal-form-view").style.display = "none";
   document.getElementById("modal-success-view").style.display = "block";
-  setTimeout(() => {
-    closeUploadModal();
-    document.getElementById("modal-form-view").style.display = "block";
-    document.getElementById("modal-success-view").style.display = "none";
-  }, 4000);
+  setTimeout(() => { closeUploadModal(); document.getElementById("modal-form-view").style.display = "block"; document.getElementById("modal-success-view").style.display = "none"; }, 4000);
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeUploadModal(); });
 
@@ -1394,25 +1332,19 @@ const videos = [
 ];
 
 function loadFeatured(el, videoId) {
-  const parent = el.parentElement;
-  parent.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  el.parentElement.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 }
-
 function loadCard(el, videoId) {
-  const thumb = el.closest(".video-card").querySelector(".video-thumb");
-  thumb.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block;position:absolute;inset:0"></iframe>`;
+  el.closest(".video-card").querySelector(".video-thumb").innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;display:block;position:absolute;inset:0"></iframe>`;
 }
 
 (function renderVideos() {
-  const vg = document.getElementById("video-grid");
-  if (!vg) return;
+  const vg = document.getElementById("video-grid"); if (!vg) return;
   vg.innerHTML = videos.map(v => `
     <div class="video-card" onclick="loadCard(this, '${v.id}')">
-      <div class="video-thumb" style="position:relative">
+      <div class="thumbnail">
         <img src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">
-        <div class="video-thumb-overlay">
-          <div class="thumb-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
+        <div class="video-thumb-overlay"><div class="thumb-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <span class="video-duration">${v.duration}</span>
       </div>
       <div class="video-info">
@@ -1423,6 +1355,7 @@ function loadCard(el, videoId) {
   `).join("");
 })();
 </script>
+
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
