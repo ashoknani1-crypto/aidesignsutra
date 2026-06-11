@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AIDesignSutra — Best AI tools for Indian creators, freelancers and entrepreneurs. Free & paid tools for video, image, design, writing, audio and automation.">
+<meta name="monetag" content="c6415a5f2b9b6063cf60ad492aef1bfa">
 <meta name="keywords" content="AIDesignSutra, AI tools for creators, free AI tools, best AI tools 2024, Indian creators AI">
 <meta property="og:title" content="AIDesignSutra — Best AI Tools for Indian Creators">
 <meta property="og:description" content="Discover 20+ best free & paid AI tools for Indian creators, freelancers & entrepreneurs.">
@@ -34,24 +35,24 @@
 
 <style>
 :root {
-  --bg: #0a0a0f;
-  --bg2: #111118;
-  --bg3: #1a1a24;
-  --surface: #16161f;
-  --surface2: #1e1e2a;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.12);
-  --text: #f0eff8;
-  --text2: #8e8da8;
-  --text3: #5a596e;
+  --bg: #ffffff;
+  --bg2: #f7f5ff;
+  --bg3: #ede9fe;
+  --surface: #ffffff;
+  --surface2: #f5f3ff;
+  --border: rgba(124,109,255,0.12);
+  --border2: rgba(124,109,255,0.22);
+  --text: #1a1730;
+  --text2: #5b5880;
+  --text3: #9896b0;
   --accent: #7c6dff;
-  --accent2: #a78bfa;
-  --green: #22c55e;
-  --green-bg: rgba(34,197,94,0.1);
-  --amber: #f59e0b;
-  --amber-bg: rgba(245,158,11,0.1);
-  --pink: #ec4899;
-  --teal: #14b8a6;
+  --accent2: #6c5ce7;
+  --green: #16a34a;
+  --green-bg: rgba(22,163,74,0.08);
+  --amber: #d97706;
+  --amber-bg: rgba(217,119,6,0.08);
+  --pink: #db2777;
+  --teal: #0d9488;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --radius: 12px;
@@ -62,32 +63,35 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background: linear-gradient(160deg, #ffffff 0%, #f5f3ff 35%, #ede9fe 65%, #fdf4ff 85%, #ffffff 100%);
+  background-attachment: fixed;
   color: var(--text);
   min-height: 100vh;
   font-size: 15px;
   line-height: 1.6;
 }
 
-/* ── Noise texture overlay ── */
+/* ── Soft gradient orbs ── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 10%, rgba(167,139,250,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 80%, rgba(236,72,153,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 60% 40%, rgba(124,109,255,0.08) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
 }
 
 /* ── Glow blob ── */
 .glow-blob {
   position: fixed;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124,109,255,0.12) 0%, transparent 70%);
-  top: -200px;
+  background: radial-gradient(circle, rgba(167,139,250,0.20) 0%, transparent 70%);
+  top: -250px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -99,7 +103,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10,10,15,0.85);
+  background: rgba(255,255,255,0.80);
   backdrop-filter: blur(20px);
   border-bottom: 0.5px solid var(--border);
   padding: 0 2rem;
@@ -207,6 +211,7 @@ nav {
   border: 0.5px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 4px 24px rgba(124,109,255,0.10), 0 1px 4px rgba(0,0,0,0.06);
 }
 .stat-item {
   flex: 1;
@@ -370,14 +375,16 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
   animation: fadeIn 0.3s ease forwards;
   opacity: 0;
+  box-shadow: 0 2px 12px rgba(124,109,255,0.07), 0 1px 3px rgba(0,0,0,0.05);
 }
 .card:hover {
   border-color: var(--border2);
   background: var(--surface2);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(124,109,255,0.14), 0 2px 8px rgba(0,0,0,0.07);
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
